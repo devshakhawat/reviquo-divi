@@ -1,0 +1,11 @@
+{
+	"$schema": "https://raw.githubusercontent.com/woocommerce/qit-cli/trunk/src/src/PreCommand/Schemas/qit-schema.json",
+	"sut": {
+		"type": "plugin",
+		"slug": "reviquo",
+		"source": {
+			"type": "local",
+			"path": "build/woo/reviquo.zip"
+		}
+	}
+}

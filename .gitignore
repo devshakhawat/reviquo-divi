@@ -1,0 +1,24 @@
+/vendor/
+/node_modules/
+/.vscode
+/.kiro/
+/build/
+/.wordpress-org
+/.env.release
+/.agents
+/.codex
+/feature-analysis-pro-roadmap.pdf
+# Build files
+/mix-manifest.json
+*.LICENSE.txt
+/yarn.lock
+/composer.json
+/composer.lock
+/phpcs.xml
+/task.txt
+
+# Docs
+/*.md
+
+# OS
+.DS_Store

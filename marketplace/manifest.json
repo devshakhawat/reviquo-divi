@@ -1,0 +1,9 @@
+{
+	"_comment": "Header fields the Elegant Themes Marketplace edition overrides. Everything else in reviquo.php is generated from the source bootstrap by bin/make-marketplace-bootstrap.php, so the two editions can no longer drift apart.",
+	"header": {
+		"Plugin Name": "ReviQuo",
+		"Plugin URI": "https://www.elegantthemes.com/",
+		"Description": "Add video and photo reviews, reusable review displays, rating summaries, filters, verified-buyer badges, rich snippets and review reminders to WooCommerce and Divi.",
+		"Update URI": "https://www.elegantthemes.com/"
+	}
+}

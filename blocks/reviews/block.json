@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "sktpr/reviews",
+  "version": "1.0.0",
+  "title": "Product Reviews",
+  "category": "widgets",
+  "icon": "star-filled",
+  "description": "Display a saved Product Reviews shortcode with a live editor preview.",
+  "keywords": ["reviews", "woocommerce", "shortcode"],
+  "textdomain": "product-reviews",
+  "attributes": {
+    "id": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "html": false
+  }
+}

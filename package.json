@@ -1,0 +1,49 @@
+{
+  "name": "product-reviews",
+  "version": "3.3.0",
+  "description": "product reviews for woocommerce products",
+  "type": "module",
+  "scripts": {
+    "build:admin-notices": "sass --style=compressed --no-source-map dev/admin/css/admin-notices.scss assets/admin/css/admin-notices.min.css",
+    "build:assets": "npm run build:admin-notices && BUILD_TARGET=admin vite build && BUILD_TARGET=public vite build && BUILD_TARGET=block vite build && BUILD_TARGET=divi4 vite build && BUILD_TARGET=divi5 vite build",
+    "production": "npm run build:assets",
+    "dev": "npm run build:admin-notices && BUILD_TARGET=admin vite build --mode development && BUILD_TARGET=public vite build --mode development && BUILD_TARGET=block vite build --mode development && BUILD_TARGET=divi4 vite build --mode development && BUILD_TARGET=divi5 vite build --mode development",
+    "watch": "BUILD_TARGET=admin vite build --watch --mode development",
+    "build": "bash build.sh",
+    "build:org": "bash build.sh",
+    "build:marketplace": "bash build-marketplace.sh",
+    "build:divi": "bash build-marketplace.sh",
+    "build:woo": "bash build-woo-marketplace.sh",
+    "zip": "bash build.sh",
+    "release": "bash bin/release.sh",
+    "version:sync": "php bin/sync-version.php",
+    "version:check": "php bin/sync-version.php --check",
+    "check:parity": "php bin/check-features-parity.php includes/features.php marketplace/features.php && php bin/check-features-parity.php includes/features.php woo-marketplace/features.php",
+    "qit": "bash bin/qit-tests.sh",
+    "qit:static": "bash bin/qit-tests.sh static",
+    "qit:runtime": "bash bin/qit-tests.sh runtime",
+    "check:features": "php bin/check-marketplace-features.php marketplace/features.php && php bin/check-marketplace-features.php woo-marketplace/features.php",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^3.11.0",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.22",
+    "sass": "^1.48.0",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^3.4.19",
+    "tailwindcss-animate": "^1.0.7",
+    "vite": "^5.4.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devshakhawat/product-reviews.git"
+  },
+  "author": "shakhawat",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "lucide-react": "^1.26.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

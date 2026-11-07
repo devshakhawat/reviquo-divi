@@ -1,0 +1,133 @@
+.sktpr-wc-notice {
+	margin: 16px 20px 16px 0;
+	padding: 0;
+	border: 1px solid #dfe2da;
+	border-left: 4px solid #ff694d;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba(23, 32, 30, 0.08);
+}
+
+.sktpr-wc-notice__inner {
+	display: grid;
+	grid-template-columns: 48px minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 16px;
+	padding: 16px 18px;
+}
+
+.sktpr-wc-notice__icon {
+	display: inline-flex;
+	width: 48px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	background: #fff0ec;
+	color: #d44c35;
+}
+
+.sktpr-wc-notice__icon svg {
+	display: block;
+	width: 28px;
+	height: 28px;
+}
+
+.sktpr-wc-notice__content {
+	min-width: 0;
+}
+
+.sktpr-wc-notice__title {
+	display: block;
+	margin: 0 0 3px;
+	color: #17201e;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.sktpr-wc-notice .sktpr-wc-notice__description {
+	margin: 0;
+	color: #69716c;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.sktpr-wc-notice__actions {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.sktpr-wc-notice .sktpr-wc-notice__button {
+	display: inline-flex;
+	min-height: 40px;
+	box-sizing: border-box;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 16px;
+	border: 1px solid #ff694d;
+	border-radius: 8px;
+	background: #ff694d;
+	box-shadow: none;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.4;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sktpr-wc-notice .sktpr-wc-notice__button:hover,
+.sktpr-wc-notice .sktpr-wc-notice__button:active {
+	border-color: #ef4f31;
+	background: #ef4f31;
+	color: #fff;
+}
+
+.sktpr-wc-notice .sktpr-wc-notice__button:focus {
+	border-color: #c9402a;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #c9402a;
+	color: #fff;
+	outline: none;
+}
+
+@media screen and (max-width: 782px) {
+	.sktpr-wc-notice {
+		margin-right: 10px;
+	}
+
+	.sktpr-wc-notice__inner {
+		grid-template-columns: 40px minmax(0, 1fr);
+		align-items: start;
+		gap: 12px;
+		padding: 14px;
+	}
+
+	.sktpr-wc-notice__icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 10px;
+	}
+
+	.sktpr-wc-notice__icon svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.sktpr-wc-notice__actions {
+		grid-column: 2;
+		justify-content: flex-start;
+	}
+
+	.sktpr-wc-notice .sktpr-wc-notice__button {
+		min-height: 44px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sktpr-wc-notice .sktpr-wc-notice__button {
+		transition: none;
+	}
+}

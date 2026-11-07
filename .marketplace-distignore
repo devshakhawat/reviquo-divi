@@ -1,0 +1,18 @@
+# Marketplace-only source and listing assets.
+marketplace
+marketplace-assets
+.marketplace-distignore
+build-marketplace.sh
+bin
+
+# The marketplace supplies licensing and updates.
+freemius
+
+# WordPress.org-specific artwork.
+.wordpress-org
+
+# Internal source-edition documentation mentions WordPress.org/Freemius.
+docs
+
+# The marketplace edition never loads Freemius.
+includes/licensing.php

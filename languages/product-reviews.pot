@@ -1,0 +1,1433 @@
+# Copyright (C) 2026 Shakhawat
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ReviQuo 3.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-reviews\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-06T05:33:06+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: product-reviews\n"
+
+#: assets/blocks/reviews/index.js:30
+msgid "Current product"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:31
+msgid "Selected products"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:32
+msgid "All products"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:36
+msgid "List"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:37
+msgid "Grid"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:38
+msgid "Masonry"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:39
+msgid "Slider"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:40
+msgid "Media Gallery"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:41
+msgid "Testimonial"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:42
+msgid "Spotlight"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:43
+msgid "Compact List"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:44
+msgid "Reels"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:45
+msgid "Marquee"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:46
+msgid "Timeline"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:47
+msgid "Accordion"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:48
+msgid "Chat Bubbles"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:58
+msgid "Choose a shortcode setting…"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:65
+#: includes/divi4-reviews-module.php:94
+#: includes/elementor-reviews-widget.php:121
+msgid "Shortcode setting"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:66
+msgid "Choose one of your saved review shortcode settings."
+msgstr ""
+
+#: assets/blocks/reviews/index.js:83
+msgid "Create display"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:84
+msgid "Manage displays"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:94
+#: includes/divi4-reviews-module.php:65
+#: includes/elementor-integration.php:35
+#: includes/elementor-reviews-widget.php:38
+msgid "Product Reviews"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:96
+msgid "Choose a saved review display to show on this page."
+msgstr ""
+
+#: assets/blocks/reviews/index.js:97
+msgid "Create a review display before adding it to this page."
+msgstr ""
+
+#: assets/blocks/reviews/index.js:141
+msgid "The preview could not be loaded."
+msgstr ""
+
+#: assets/blocks/reviews/index.js:189
+msgid "Review display unavailable"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:190
+msgid "The saved display may have been deleted. Choose another display."
+msgstr ""
+
+#: assets/blocks/reviews/index.js:203
+msgid "Review display"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:208
+msgid "Source"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:209
+msgid "Layout"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:212
+#: assets/blocks/reviews/index.js:244
+msgid "Edit display settings"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:217
+msgid "Shortcode"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:219
+msgid "Equivalent shortcode"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:226
+msgid "Copied!"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:226
+msgid "Copy shortcode"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:238
+msgid "Refresh preview"
+msgstr ""
+
+#. translators: 1: review source, 2: review layout.
+#: assets/blocks/reviews/index.js:278
+#, js-format
+msgid "%1$s source · %2$s layout"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:284
+msgid "Editor preview"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:292
+msgid "Try again"
+msgstr ""
+
+#: assets/blocks/reviews/index.js:302
+msgid "Loading preview…"
+msgstr ""
+
+#. Plugin Name of the plugin
+#: product-reviews.php
+#: includes/privacy.php:47
+msgid "ReviQuo"
+msgstr ""
+
+#. Description of the plugin
+#: product-reviews.php
+msgid "Let customers add webcam recordings, video files and photos to WooCommerce product reviews, with a rating summary, review filters, verified-buyer badges, rich snippets and automated review-reminder emails."
+msgstr ""
+
+#. Author of the plugin
+#: product-reviews.php
+msgid "Shakhawat"
+msgstr ""
+
+#. Author URI of the plugin
+#: product-reviews.php
+msgid "https://profiles.wordpress.org/devshakhawat/"
+msgstr ""
+
+#: includes/admin-menu.php:80
+#: includes/admin-menu.php:81
+msgid "Review Settings"
+msgstr ""
+
+#: includes/admin-menu.php:90
+#: includes/admin-menu.php:91
+#: includes/review-shortcodes.php:48
+msgid "Review Shortcode"
+msgstr ""
+
+#: includes/admin-notices.php:95
+msgid "WooCommerce is installed but inactive. Activate it to start using ReviQuo."
+msgstr ""
+
+#: includes/admin-notices.php:96
+msgid "Install WooCommerce to start collecting richer product reviews with ReviQuo."
+msgstr ""
+
+#: includes/admin-notices.php:109
+msgid "Activate WooCommerce"
+msgstr ""
+
+#: includes/admin-notices.php:121
+msgid "Install WooCommerce"
+msgstr ""
+
+#: includes/admin-notices.php:134
+msgid "ReviQuo needs WooCommerce"
+msgstr ""
+
+#: includes/database.php:710
+msgid "ReviQuo:"
+msgstr ""
+
+#: includes/database.php:711
+msgid "Email reminders database table has been created/updated successfully."
+msgstr ""
+
+#: includes/display-video.php:44
+msgid "Your review is awaiting approval"
+msgstr ""
+
+#: includes/display-video.php:83
+#: includes/review-shortcodes.php:831
+#: includes/review-shortcodes.php:905
+#: includes/review-shortcodes.php:944
+#: includes/review-shortcodes.php:971
+msgid "Verified Customer"
+msgstr ""
+
+#: includes/display-video.php:116
+#: includes/review-shortcodes.php:1120
+#: includes/video-reviews-table.php:465
+msgid "Play review video"
+msgstr ""
+
+#: includes/display-video.php:130
+#: includes/review-shortcodes.php:1129
+#: includes/video-reviews-table.php:475
+msgid "View review photo"
+msgstr ""
+
+#: includes/divi4-integration.php:83
+#: includes/divi5-integration.php:156
+msgid "Choose a shortcode setting in the Content panel."
+msgstr ""
+
+#: includes/divi4-integration.php:84
+#: includes/divi5-integration.php:157
+msgid "Loading review display…"
+msgstr ""
+
+#: includes/divi4-integration.php:85
+#: includes/divi5-integration.php:158
+#: includes/elementor-reviews-widget.php:163
+msgid "The selected shortcode setting is unavailable."
+msgstr ""
+
+#: includes/divi4-reviews-module.php:72
+#: includes/elementor-reviews-widget.php:104
+msgid "Review Display"
+msgstr ""
+
+#: includes/divi4-reviews-module.php:86
+#: includes/divi5-integration.php:155
+#: includes/elementor-reviews-widget.php:108
+msgid "Choose a shortcode setting"
+msgstr ""
+
+#: includes/divi4-reviews-module.php:99
+#: includes/elementor-reviews-widget.php:127
+msgid "Select a saved display created under ReviQuo > Review Shortcode."
+msgstr ""
+
+#. translators: 1: saved review display name, 2: shortcode ID.
+#: includes/elementor-reviews-widget.php:112
+#, php-format
+msgid "%1$s (#%2$d)"
+msgstr ""
+
+#: includes/elementor-reviews-widget.php:140
+msgid "Manage shortcode settings"
+msgstr ""
+
+#: includes/elementor-reviews-widget.php:157
+msgid "Choose a shortcode setting to display product reviews."
+msgstr ""
+
+#: includes/email-reminders.php:53
+msgid "SKTPR: Pending review reminders cancelled due to order status change."
+msgstr ""
+
+#: includes/email-reminders.php:90
+msgid "SKTPR: Review reminder not scheduled - invalid email address."
+msgstr ""
+
+#: includes/email-reminders.php:95
+msgid "SKTPR: Review reminder not scheduled - customer has unsubscribed from review reminders."
+msgstr ""
+
+#: includes/email-reminders.php:100
+msgid "SKTPR: Review reminder not scheduled - no reviewable products in order."
+msgstr ""
+
+#: includes/email-reminders.php:110
+#: includes/migration.php:76
+msgid "Guest Customer"
+msgstr ""
+
+#: includes/email-reminders.php:136
+msgid "SKTPR: Failed to schedule review reminder - database error."
+msgstr ""
+
+#: includes/email-reminders.php:148
+msgid "SKTPR: Failed to schedule review reminder - cron error."
+msgstr ""
+
+#. translators: 1: order status, 2: scheduled date.
+#: includes/email-reminders.php:156
+#, php-format
+msgid "SKTPR: %1$s review reminder scheduled for %2$s."
+msgstr ""
+
+#: includes/email-reminders.php:208
+msgid "SKTPR: Review reminder not sent - customer has unsubscribed from review reminders."
+msgstr ""
+
+#: includes/email-reminders.php:221
+msgid "SKTPR: Review reminder not sent - no reviewable products found."
+msgstr ""
+
+#: includes/email-reminders.php:246
+msgid "No longer want review reminder emails?"
+msgstr ""
+
+#: includes/email-reminders.php:248
+#: includes/email-reminders.php:477
+msgid "Unsubscribe"
+msgstr ""
+
+#. translators: %s: triggering order status.
+#: includes/email-reminders.php:265
+#, php-format
+msgid "SKTPR: %s review reminder email sent successfully."
+msgstr ""
+
+#. translators: %s: triggering order status.
+#: includes/email-reminders.php:282
+#, php-format
+msgid "SKTPR: Failed to send the %s review reminder email."
+msgstr ""
+
+#: includes/email-reminders.php:387
+msgid "Write Review"
+msgstr ""
+
+#: includes/email-reminders.php:476
+msgid "This unsubscribe link is invalid or has expired."
+msgstr ""
+
+#: includes/email-reminders.php:496
+msgid "You have been unsubscribed and will no longer receive review reminder emails from us."
+msgstr ""
+
+#: includes/email-reminders.php:497
+msgid "Unsubscribed"
+msgstr ""
+
+#: includes/email-reminders.php:501
+msgid "Return to store"
+msgstr ""
+
+#: includes/email-settings.php:32
+#: includes/review-rewards.php:44
+msgid "You do not have permission to update these settings."
+msgstr ""
+
+#: includes/email-settings.php:52
+msgid "Email reminder settings saved successfully!"
+msgstr ""
+
+#: includes/email-settings.php:129
+msgid "Enter a valid sender name and email address."
+msgstr ""
+
+#: includes/email-settings.php:140
+msgid "Enable at least one reminder rule."
+msgstr ""
+
+#: includes/email-settings.php:145
+msgid "Every enabled reminder needs a subject and email content."
+msgstr ""
+
+#: includes/headless-api.php:144
+msgid "Review not found."
+msgstr ""
+
+#: includes/headless-api.php:160
+msgid "Product not found."
+msgstr ""
+
+#: includes/headless-api.php:218
+#: includes/headless-api.php:233
+msgid "Review display not found."
+msgstr ""
+
+#: includes/headless-api.php:244
+msgid "context_product_id is required for a current-product review display."
+msgstr ""
+
+#: includes/headless-api.php:555
+msgid "One or more products could not be found."
+msgstr ""
+
+#: includes/helpers.php:18
+#: includes/helpers.php:159
+msgid "Record Review"
+msgstr ""
+
+#: includes/helpers.php:19
+#: includes/helpers.php:170
+#: includes/scripts.php:231
+msgid "Start Recording"
+msgstr ""
+
+#: includes/helpers.php:20
+#: includes/helpers.php:189
+msgid "Stop Recording"
+msgstr ""
+
+#: includes/helpers.php:21
+#: includes/helpers.php:208
+msgid "Add this video"
+msgstr ""
+
+#: includes/helpers.php:40
+msgid "No camera available"
+msgstr ""
+
+#: includes/helpers.php:62
+msgid "minutes"
+msgstr ""
+
+#: includes/helpers.php:62
+msgid "minute"
+msgstr ""
+
+#: includes/helpers.php:64
+msgid "Maximum recording duration"
+msgstr ""
+
+#: includes/helpers.php:96
+#: includes/video-btn.php:128
+msgid "I consent to my name, review, and any uploaded photos or videos being stored and displayed publicly on this site."
+msgstr ""
+
+#: includes/helpers.php:106
+msgid "Record Video"
+msgstr ""
+
+#: includes/helpers.php:125
+#: includes/video-btn.php:97
+msgid "Upload video"
+msgstr ""
+
+#: includes/helpers.php:144
+#: includes/video-btn.php:114
+msgid "Add photos"
+msgstr ""
+
+#: includes/helpers.php:527
+msgid "How was your recent purchase, {customer_name}?"
+msgstr ""
+
+#: includes/helpers.php:600
+msgid "Thanks for your review, {customer_name}! Here is your reward"
+msgstr ""
+
+#: includes/helpers.php:603
+msgid "Share a photo or video review and get {review_reward} off your next order!"
+msgstr ""
+
+#: includes/helpers.php:662
+#: includes/helpers.php:692
+msgid "Hi {customer_name},"
+msgstr ""
+
+#: includes/helpers.php:664
+msgid "Thank you for reviewing {product_name}! Your feedback helps other shoppers and helps us improve."
+msgstr ""
+
+#: includes/helpers.php:666
+msgid "As a thank-you, here is {coupon_amount} off your next order:"
+msgstr ""
+
+#: includes/helpers.php:672
+msgid "Valid until: {coupon_expiry}"
+msgstr ""
+
+#: includes/helpers.php:675
+msgid "Shop now"
+msgstr ""
+
+#: includes/helpers.php:678
+#: includes/helpers.php:704
+msgid "Best regards,"
+msgstr ""
+
+#: includes/helpers.php:679
+#: includes/helpers.php:705
+msgid "The {site_name} Team"
+msgstr ""
+
+#: includes/helpers.php:694
+msgid "Thank you for your recent purchase from {site_name}! We hope you are enjoying your new products."
+msgstr ""
+
+#: includes/helpers.php:696
+msgid "We would love to hear about your experience. Your feedback helps us improve and helps other customers make informed decisions."
+msgstr ""
+
+#: includes/helpers.php:698
+msgid "Order #{order_number}"
+msgstr ""
+
+#: includes/helpers.php:698
+msgid "placed on {order_date}"
+msgstr ""
+
+#: includes/helpers.php:702
+msgid "Thank you for taking the time to share your thoughts!"
+msgstr ""
+
+#: includes/helpers.php:709
+msgid "This email was sent because you recently made a purchase from {site_name}."
+msgstr ""
+
+#. translators: %s: site administrator email address, rendered as a mailto link.
+#: includes/helpers.php:712
+#, php-format
+msgid "If you have any questions, please contact us at %s"
+msgstr ""
+
+#: includes/hooks.php:94
+msgid "Something went wrong."
+msgstr ""
+
+#: includes/hooks.php:97
+msgid "Successfully saved."
+msgstr ""
+
+#: includes/hooks.php:120
+msgid "All ReviQuo settings have been reset to their defaults."
+msgstr ""
+
+#: includes/hooks.php:135
+msgid "Settings"
+msgstr ""
+
+#: includes/privacy.php:43
+msgid "When visitors submit product reviews, this site may collect the review text, rating, reviewer name and email address, consent timestamp, and any photos or videos attached to the review. Review media is stored in this site’s WordPress media library and may be displayed publicly with an approved review."
+msgstr ""
+
+#: includes/privacy.php:44
+msgid "If review reminder emails are enabled, the site stores the customer name and email address, order identifier, reminder status, schedule, and a snapshot of the email template. Customers can opt out using the unsubscribe link in a reminder. Review media and reminder records are included in WordPress personal-data export and erasure tools."
+msgstr ""
+
+#: includes/privacy.php:45
+msgid "The site owner determines how long approved reviews, uploaded media, and reminder delivery records are retained. Deleting a review permanently also deletes media uploaded through the review form."
+msgstr ""
+
+#: includes/privacy.php:77
+#: includes/privacy.php:102
+#: includes/privacy.php:199
+msgid "Product Review Media"
+msgstr ""
+
+#: includes/privacy.php:82
+#: includes/privacy.php:107
+#: includes/privacy.php:226
+msgid "Review Reminder Emails"
+msgstr ""
+
+#: includes/privacy.php:87
+#: includes/privacy.php:112
+#: includes/privacy.php:359
+msgid "Review Reward Coupons"
+msgstr ""
+
+#: includes/privacy.php:167
+msgid "Review video"
+msgstr ""
+
+#: includes/privacy.php:175
+msgid "Review photo"
+msgstr ""
+
+#: includes/privacy.php:183
+msgid "Media consent given"
+msgstr ""
+
+#: includes/privacy.php:193
+msgid "Reviewed product"
+msgstr ""
+
+#: includes/privacy.php:230
+msgid "Customer name"
+msgstr ""
+
+#: includes/privacy.php:234
+msgid "Customer email"
+msgstr ""
+
+#: includes/privacy.php:238
+#: includes/reminders-list.php:87
+msgid "Order ID"
+msgstr ""
+
+#: includes/privacy.php:242
+msgid "Trigger status"
+msgstr ""
+
+#: includes/privacy.php:246
+#: includes/reminders-list.php:92
+msgid "Status"
+msgstr ""
+
+#: includes/privacy.php:250
+msgid "Scheduled for"
+msgstr ""
+
+#: includes/privacy.php:363
+msgid "Coupon code"
+msgstr ""
+
+#: includes/privacy.php:367
+msgid "Review ID"
+msgstr ""
+
+#: includes/privacy.php:371
+msgid "Times used"
+msgstr ""
+
+#. translators: %s: number of reviews.
+#: includes/rating-summary.php:102
+#, php-format
+msgid "Based on %s review"
+msgid_plural "Based on %s reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/rating-summary.php:103
+#: includes/review-shortcodes.php:706
+msgid "Rating distribution"
+msgstr ""
+
+#: includes/reminders-list.php:28
+#: includes/reminders-list.php:29
+#: includes/reminders-list.php:61
+msgid "Email Reminders"
+msgstr ""
+
+#: includes/reminders-list.php:62
+msgid "View and manage scheduled email reminders for product reviews."
+msgstr ""
+
+#: includes/reminders-list.php:69
+msgid "Reminder cancelled successfully."
+msgstr ""
+
+#: includes/reminders-list.php:88
+msgid "Customer"
+msgstr ""
+
+#: includes/reminders-list.php:89
+msgid "Email"
+msgstr ""
+
+#: includes/reminders-list.php:90
+msgid "Trigger"
+msgstr ""
+
+#: includes/reminders-list.php:91
+msgid "Scheduled Time"
+msgstr ""
+
+#: includes/reminders-list.php:93
+msgid "Actions"
+msgstr ""
+
+#: includes/reminders-list.php:100
+msgid "No scheduled reminders found."
+msgstr ""
+
+#: includes/reminders-list.php:136
+msgid "Overdue"
+msgstr ""
+
+#: includes/reminders-list.php:157
+msgid "Are you sure you want to cancel this reminder?"
+msgstr ""
+
+#: includes/reminders-list.php:158
+msgid "Cancel"
+msgstr ""
+
+#: includes/reminders-list.php:161
+msgid "Sent"
+msgstr ""
+
+#: includes/reminders-list.php:163
+msgid "Cancelled"
+msgstr ""
+
+#: includes/reminders-list.php:165
+msgid "Failed"
+msgstr ""
+
+#: includes/reminders-list.php:232
+msgid "SKTPR: Review reminder cancelled manually from admin."
+msgstr ""
+
+#: includes/review-block.php:135
+msgid "The selected review display could not be found."
+msgstr ""
+
+#: includes/review-filters.php:97
+#: includes/review-shortcodes.php:751
+#: includes/video-reviews-table.php:608
+msgid "All"
+msgstr ""
+
+#: includes/review-filters.php:119
+msgid "With photos / videos"
+msgstr ""
+
+#: includes/review-filters.php:127
+#: includes/review-shortcodes.php:750
+msgid "Filter reviews"
+msgstr ""
+
+#: includes/review-filters.php:129
+#: includes/scripts.php:244
+msgid "No reviews match the selected filters."
+msgstr ""
+
+#: includes/review-rewards.php:60
+msgid "Review reward settings saved successfully!"
+msgstr ""
+
+#: includes/review-rewards.php:139
+msgid "Enable at least one reward tier."
+msgstr ""
+
+#: includes/review-rewards.php:144
+msgid "Every enabled reward tier needs a discount amount greater than zero."
+msgstr ""
+
+#: includes/review-rewards.php:149
+msgid "The reward email needs a subject and content."
+msgstr ""
+
+#: includes/review-rewards.php:153
+msgid "The reward email content must include the {coupon_code} placeholder."
+msgstr ""
+
+#. translators: %d: review comment ID.
+#: includes/review-rewards.php:411
+#, php-format
+msgid "ReviQuo reward for review #%d"
+msgstr ""
+
+#: includes/review-rewards.php:479
+msgid "No expiry"
+msgstr ""
+
+#. translators: %s: discount, e.g. 15% or $10.
+#: includes/review-rewards.php:604
+#, php-format
+msgid "up to %s"
+msgstr ""
+
+#: includes/review-shortcodes.php:47
+msgid "Review Shortcodes"
+msgstr ""
+
+#: includes/review-shortcodes.php:312
+msgid "Choose a product to preview its reviews."
+msgstr ""
+
+#: includes/review-shortcodes.php:312
+#: includes/review-shortcodes.php:412
+msgid "No reviews found."
+msgstr ""
+
+#: includes/review-shortcodes.php:375
+msgid "Sample preview — no approved reviews with photos or videos were found."
+msgstr ""
+
+#: includes/review-shortcodes.php:376
+msgid "Sample preview — no approved reviews were found."
+msgstr ""
+
+#: includes/review-shortcodes.php:422
+#: includes/review-shortcodes.php:484
+#: includes/scripts.php:246
+msgid "Previous reviews"
+msgstr ""
+
+#: includes/review-shortcodes.php:423
+#: includes/review-shortcodes.php:485
+#: includes/scripts.php:247
+msgid "Next reviews"
+msgstr ""
+
+#: includes/review-shortcodes.php:439
+#: includes/scripts.php:245
+msgid "Load More"
+msgstr ""
+
+#. translators: %s: number of reviews.
+#: includes/review-shortcodes.php:705
+#, php-format
+msgid "%s review"
+msgid_plural "%s reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/review-shortcodes.php:763
+msgid "With media"
+msgstr ""
+
+#. translators: %d: star rating out of 5.
+#: includes/review-shortcodes.php:836
+#: includes/review-shortcodes.php:891
+#: includes/review-shortcodes.php:931
+#: includes/review-shortcodes.php:975
+#: includes/review-shortcodes.php:1018
+#: includes/review-shortcodes.php:1070
+#: includes/video-reviews-table.php:410
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#. translators: %d: number of photos and videos attached to the review.
+#: includes/review-shortcodes.php:882
+#, php-format
+msgid "%d media item"
+msgid_plural "%d media items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/review-shortcodes.php:971
+#: includes/review-shortcodes.php:1014
+#: includes/review-shortcodes.php:1066
+msgid "Verified"
+msgstr ""
+
+#. translators: %d: number of photos and videos attached to the review.
+#: includes/review-shortcodes.php:1029
+#, php-format
+msgid "%d media"
+msgid_plural "%d media"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/review-shortcodes.php:1145
+msgid "Alex Morgan"
+msgstr ""
+
+#: includes/review-shortcodes.php:1146
+msgid "Excellent quality and exactly as described. Delivery was quick and the product feels built to last."
+msgstr ""
+
+#: includes/review-shortcodes.php:1149
+#: includes/review-shortcodes.php:1157
+msgid "Sample Product"
+msgstr ""
+
+#: includes/review-shortcodes.php:1153
+msgid "Jamie Lee"
+msgstr ""
+
+#: includes/review-shortcodes.php:1154
+msgid "Very happy with this purchase. Setup was simple and everything worked as expected."
+msgstr ""
+
+#: includes/review-shortcodes.php:1169
+msgid "You are not allowed to manage review shortcodes."
+msgstr ""
+
+#: includes/review-shortcodes.php:1230
+msgid "Enter a name for this shortcode."
+msgstr ""
+
+#: includes/review-shortcodes.php:1233
+msgid "Select at least one product."
+msgstr ""
+
+#: includes/review-shortcodes.php:1236
+#: includes/review-shortcodes.php:1275
+#: includes/review-shortcodes.php:1404
+msgid "The shortcode could not be found."
+msgstr ""
+
+#: includes/review-shortcodes.php:1262
+msgid "Review shortcode saved."
+msgstr ""
+
+#. translators: %s: title of the shortcode being duplicated.
+#: includes/review-shortcodes.php:1283
+#, php-format
+msgid "%s Copy"
+msgstr ""
+
+#: includes/review-shortcodes.php:1291
+msgid "Shortcode duplicated."
+msgstr ""
+
+#: includes/review-shortcodes.php:1301
+msgid "The shortcode could not be deleted."
+msgstr ""
+
+#: includes/review-shortcodes.php:1303
+msgid "Shortcode moved to the trash."
+msgstr ""
+
+#: includes/review-shortcodes.php:1316
+msgid "Select at least one shortcode to delete."
+msgstr ""
+
+#: includes/review-shortcodes.php:1321
+msgid "One or more selected shortcodes could not be found."
+msgstr ""
+
+#: includes/review-shortcodes.php:1327
+msgid "One or more shortcodes could not be deleted."
+msgstr ""
+
+#. translators: %d: number of deleted shortcodes.
+#: includes/review-shortcodes.php:1335
+#, php-format
+msgid "%d shortcode moved to the trash."
+msgid_plural "%d shortcodes moved to the trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/review-shortcodes.php:1407
+msgid "Invalid review filter."
+msgstr ""
+
+#: includes/save-video.php:117
+msgid "The review form expired. Please reload the page and try again."
+msgstr ""
+
+#: includes/save-video.php:118
+#: includes/save-video.php:130
+#: includes/save-video.php:166
+msgid "Review submission error"
+msgstr ""
+
+#: includes/save-video.php:129
+msgid "Please check the consent box to submit your review."
+msgstr ""
+
+#: includes/save-video.php:141
+#: includes/scripts.php:248
+msgid "Please record a video testimonial before submitting your review."
+msgstr ""
+
+#: includes/save-video.php:146
+#: includes/scripts.php:249
+msgid "Please upload a video file before submitting your review."
+msgstr ""
+
+#: includes/save-video.php:151
+#: includes/scripts.php:250
+msgid "Please upload at least one photo before submitting your review."
+msgstr ""
+
+#. translators: %s: Site name.
+#: includes/save-video.php:377
+#, php-format
+msgid "[%s] New Media Review Awaiting Approval"
+msgstr ""
+
+#. translators: 1: Product name. 2: Review author name. 3: Review author email. 4: Excerpt of the review. 5: URL to edit the comment. 6: URL to the media reviews list.
+#: includes/save-video.php:384
+#, php-format
+msgid ""
+"A new review with customer media has been submitted and is awaiting your approval.\n"
+"\n"
+"Product: %1$s\n"
+"Author: %2$s (%3$s)\n"
+"Review: %4$s\n"
+"\n"
+"Please review and approve it here:\n"
+"%5$s\n"
+"\n"
+"You can manage all media reviews here:\n"
+"%6$s"
+msgstr ""
+
+#: includes/save-video.php:385
+msgid "Unknown Product"
+msgstr ""
+
+#: includes/scripts.php:91
+msgid "Alex Johnson"
+msgstr ""
+
+#: includes/scripts.php:96
+msgid "Sample product"
+msgstr ""
+
+#: includes/scripts.php:223
+msgid "Camera access was blocked. Please allow camera and microphone permissions for this site in your browser, then try again."
+msgstr ""
+
+#: includes/scripts.php:224
+msgid "No camera or microphone was found on this device."
+msgstr ""
+
+#: includes/scripts.php:225
+msgid "Your camera appears to be in use by another application. Close it and try again."
+msgstr ""
+
+#: includes/scripts.php:226
+msgid "Could not access your camera or microphone."
+msgstr ""
+
+#: includes/scripts.php:227
+msgid "Camera recording requires a secure connection. Please open this page over HTTPS and try again."
+msgstr ""
+
+#: includes/scripts.php:228
+msgid "Camera recording is not supported in this browser."
+msgstr ""
+
+#: includes/scripts.php:229
+msgid "Video recording is not supported in this browser. Please upload a video file instead."
+msgstr ""
+
+#: includes/scripts.php:230
+msgid "The camera is not ready. Please allow camera access when prompted, or reopen this window to try again."
+msgstr ""
+
+#: includes/scripts.php:232
+msgid "Record again"
+msgstr ""
+
+#: includes/scripts.php:233
+msgid "Remove photo"
+msgstr ""
+
+#. translators: 1: number of photos added, 2: maximum number of photos.
+#: includes/scripts.php:235
+#, php-format
+msgid "%1$d of %2$d added"
+msgstr ""
+
+#. translators: %d: maximum number of photos.
+#: includes/scripts.php:237
+#, php-format
+msgid "up to %d"
+msgstr ""
+
+#. translators: %d: maximum number of photos.
+#: includes/scripts.php:239
+#, php-format
+msgid "You can upload up to %d photos."
+msgstr ""
+
+#: includes/scripts.php:240
+msgid "Review media"
+msgstr ""
+
+#: includes/scripts.php:241
+msgid "Close"
+msgstr ""
+
+#: includes/scripts.php:242
+msgid "Previous"
+msgstr ""
+
+#: includes/scripts.php:243
+msgid "Next"
+msgstr ""
+
+#. translators: %s: review author name.
+#: includes/structured-data.php:137
+#, php-format
+msgid "Customer review video by %s"
+msgstr ""
+
+#: includes/template-loader.php:63
+msgid "Template file not found."
+msgstr ""
+
+#: includes/video-btn.php:66
+msgid "Your rating"
+msgstr ""
+
+#: includes/video-btn.php:68
+msgid "Rate…"
+msgstr ""
+
+#: includes/video-btn.php:69
+msgid "Perfect"
+msgstr ""
+
+#: includes/video-btn.php:70
+msgid "Good"
+msgstr ""
+
+#: includes/video-btn.php:71
+msgid "Average"
+msgstr ""
+
+#: includes/video-btn.php:72
+msgid "Not that bad"
+msgstr ""
+
+#: includes/video-btn.php:73
+msgid "Very poor"
+msgstr ""
+
+#: includes/video-btn.php:81
+msgid "Your review"
+msgstr ""
+
+#: includes/video-btn.php:98
+msgid "MP4 or WebM"
+msgstr ""
+
+#: includes/video-btn.php:99
+msgid "Remove video"
+msgstr ""
+
+#: includes/video-btn.php:115
+msgid "up to 5"
+msgstr ""
+
+#: includes/video-reviews-list.php:36
+#: includes/video-reviews-list.php:37
+#: includes/video-reviews-list.php:79
+msgid "Reviews"
+msgstr ""
+
+#: includes/video-reviews-list.php:88
+msgid "Search reviews"
+msgstr ""
+
+#: includes/video-reviews-list.php:109
+#: includes/video-reviews-list.php:147
+msgid "Security check failed."
+msgstr ""
+
+#: includes/video-reviews-list.php:119
+msgid "Action failed. Please try again."
+msgstr ""
+
+#: includes/video-reviews-list.php:152
+msgid "No reviews selected."
+msgstr ""
+
+#: includes/video-reviews-list.php:222
+msgid "Review approved."
+msgstr ""
+
+#: includes/video-reviews-list.php:225
+msgid "Review unapproved."
+msgstr ""
+
+#: includes/video-reviews-list.php:228
+msgid "Review marked as spam."
+msgstr ""
+
+#: includes/video-reviews-list.php:231
+msgid "Review restored from spam."
+msgstr ""
+
+#: includes/video-reviews-list.php:234
+msgid "Review moved to trash."
+msgstr ""
+
+#: includes/video-reviews-list.php:237
+msgid "Review restored from trash."
+msgstr ""
+
+#: includes/video-reviews-list.php:240
+msgid "Review updated."
+msgstr ""
+
+#. translators: %d: number of reviews approved.
+#: includes/video-reviews-list.php:255
+#, php-format
+msgid "%d review approved."
+msgid_plural "%d reviews approved."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews unapproved.
+#: includes/video-reviews-list.php:259
+#, php-format
+msgid "%d review unapproved."
+msgid_plural "%d reviews unapproved."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews marked as spam.
+#: includes/video-reviews-list.php:263
+#, php-format
+msgid "%d review marked as spam."
+msgid_plural "%d reviews marked as spam."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews restored from spam.
+#: includes/video-reviews-list.php:267
+#, php-format
+msgid "%d review restored from spam."
+msgid_plural "%d reviews restored from spam."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews moved to trash.
+#: includes/video-reviews-list.php:271
+#, php-format
+msgid "%d review moved to trash."
+msgid_plural "%d reviews moved to trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews restored from trash.
+#: includes/video-reviews-list.php:275
+#, php-format
+msgid "%d review restored from trash."
+msgid_plural "%d reviews restored from trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of reviews processed.
+#: includes/video-reviews-list.php:279
+#, php-format
+msgid "%d review processed."
+msgid_plural "%d reviews processed."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of pending media reviews, 2: URL of the media reviews screen.
+#: includes/video-reviews-list.php:498
+#, php-format
+msgid "%1$d new media review is awaiting approval. <a href=\"%2$s\">Review it now</a>"
+msgid_plural "%1$d new media reviews are awaiting approval. <a href=\"%2$s\">Review them now</a>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/video-reviews-table.php:39
+msgid "Author"
+msgstr ""
+
+#: includes/video-reviews-table.php:40
+msgid "Review"
+msgstr ""
+
+#: includes/video-reviews-table.php:41
+msgid "Product"
+msgstr ""
+
+#: includes/video-reviews-table.php:42
+msgid "Rating"
+msgstr ""
+
+#: includes/video-reviews-table.php:43
+msgid "Media"
+msgstr ""
+
+#: includes/video-reviews-table.php:47
+msgid "Reward"
+msgstr ""
+
+#: includes/video-reviews-table.php:50
+msgid "Date"
+msgstr ""
+
+#: includes/video-reviews-table.php:75
+msgid "Move to Trash"
+msgstr ""
+
+#: includes/video-reviews-table.php:76
+#: includes/video-reviews-table.php:293
+msgid "Restore"
+msgstr ""
+
+#: includes/video-reviews-table.php:77
+msgid "Mark as Spam"
+msgstr ""
+
+#: includes/video-reviews-table.php:78
+#: includes/video-reviews-table.php:260
+msgid "Not Spam"
+msgstr ""
+
+#: includes/video-reviews-table.php:79
+#: includes/video-reviews-table.php:242
+msgid "Approve"
+msgstr ""
+
+#: includes/video-reviews-table.php:80
+#: includes/video-reviews-table.php:227
+msgid "Unapprove"
+msgstr ""
+
+#: includes/video-reviews-table.php:192
+msgid "Anonymous"
+msgstr ""
+
+#: includes/video-reviews-table.php:202
+msgid "Edit"
+msgstr ""
+
+#: includes/video-reviews-table.php:210
+msgid "View"
+msgstr ""
+
+#: includes/video-reviews-table.php:275
+#: includes/video-reviews-table.php:339
+#: includes/video-reviews-table.php:637
+msgid "Spam"
+msgstr ""
+
+#: includes/video-reviews-table.php:308
+#: includes/video-reviews-table.php:340
+#: includes/video-reviews-table.php:647
+msgid "Trash"
+msgstr ""
+
+#: includes/video-reviews-table.php:338
+#: includes/video-reviews-table.php:627
+msgid "Pending"
+msgstr ""
+
+#: includes/video-reviews-table.php:378
+msgid "View product"
+msgstr ""
+
+#. translators: %d: number of videos attached to the review.
+#: includes/video-reviews-table.php:482
+#, php-format
+msgid "%d video"
+msgid_plural "%d videos"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of photos attached to the review.
+#: includes/video-reviews-table.php:486
+#, php-format
+msgid "%d photo"
+msgid_plural "%d photos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/video-reviews-table.php:530
+msgid "Used"
+msgstr ""
+
+#: includes/video-reviews-table.php:532
+msgid "Suspended"
+msgstr ""
+
+#: includes/video-reviews-table.php:534
+msgid "Unused"
+msgstr ""
+
+#: includes/video-reviews-table.php:550
+msgid "No video or photo reviews found."
+msgstr ""
+
+#: includes/video-reviews-table.php:617
+msgid "Approved"
+msgstr ""
+
+#: blocks/reviews/block.json
+msgctxt "block title"
+msgid "Product Reviews"
+msgstr ""
+
+#: blocks/reviews/block.json
+msgctxt "block description"
+msgid "Display a saved Product Reviews shortcode with a live editor preview."
+msgstr ""
+
+#: blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "reviews"
+msgstr ""
+
+#: blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "woocommerce"
+msgstr ""
+
+#: blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "shortcode"
+msgstr ""

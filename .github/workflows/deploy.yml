@@ -1,0 +1,80 @@
+name: Release to Freemius and WordPress.org
+
+# Runs the same pipeline as 'npm run release' (bin/release.sh): build the
+# premium package, deploy it to Freemius, download the free version Freemius
+# generates, and commit that to WordPress.org SVN.
+#
+# Manual only. It must not run on v* tags: 'npm run release' pushes the tag
+# after it has already released, and deploying the source tree itself would
+# put the premium code on WordPress.org.
+#
+# Secrets: FS_API_TOKEN, SVN_USERNAME, SVN_PASSWORD (FS_PRODUCT_ID optional).
+# .wordpress-org/ is not in git, so a CI release leaves the listing assets as
+# they are on WordPress.org.
+
+on:
+  workflow_dispatch:
+    inputs:
+      svn-dry-run:
+        description: "Stop before the SVN commit (the Freemius deployment stays pending)"
+        type: boolean
+        default: true
+      release-mode:
+        description: "Freemius release mode (only 'released' continues to WordPress.org)"
+        type: choice
+        options:
+          - released
+          - beta
+          - pending
+        default: released
+      reuse-freemius:
+        description: "Continue with this version's existing Freemius upload (e.g. after a dry run)"
+        type: boolean
+        default: false
+
+jobs:
+  release:
+    name: Build and release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          coverage: none
+
+      - name: Install Subversion
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq subversion
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Release
+        run: >
+          bash bin/release.sh --yes --no-git-tag
+          --release-mode=${{ inputs.release-mode }}
+          ${{ inputs.svn-dry-run && '--svn-dry-run' || '' }}
+          ${{ inputs.reuse-freemius && '--reuse-freemius' || '' }}
+        env:
+          FS_API_TOKEN: ${{ secrets.FS_API_TOKEN }}
+          FS_PRODUCT_ID: ${{ secrets.FS_PRODUCT_ID }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+
+      - name: Upload free version
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-reviews-free
+          path: build/org/product-reviews-free-*.zip
+          if-no-files-found: ignore

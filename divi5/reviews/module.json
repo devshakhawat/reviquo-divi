@@ -1,0 +1,1474 @@
+{
+  "name": "sktpr/divi5-reviews",
+  "d4Shortcode": "sktpr_divi4_reviews",
+  "title": "Product Reviews",
+  "titles": "Product Reviews",
+  "category": "module",
+  "moduleClassName": "sktpr_divi5_reviews",
+  "moduleOrderClassName": "sktpr_divi5_reviews",
+  "attributes": {
+    "module": {
+      "type": "object",
+      "selector": "{{selector}}",
+      "default": {
+        "meta": {
+          "adminLabel": {
+            "desktop": {
+              "value": "Product Reviews"
+            }
+          }
+        }
+      },
+      "settings": {
+        "meta": {
+          "adminLabel": {}
+        },
+        "advanced": {
+          "link": {},
+          "htmlAttributes": {}
+        },
+        "decoration": {
+          "background": {},
+          "sizing": {},
+          "spacing": {},
+          "border": {},
+          "boxShadow": {},
+          "filters": {},
+          "transform": {},
+          "animation": {},
+          "overflow": {},
+          "disabledOn": {},
+          "transition": {},
+          "position": {},
+          "zIndex": {},
+          "scroll": {},
+          "sticky": {}
+        }
+      }
+    },
+    "reviews": {
+      "type": "object",
+      "default": {
+        "advanced": {
+          "mode": {
+            "desktop": {
+              "value": "saved"
+            }
+          },
+          "layout": {
+            "desktop": {
+              "value": "list"
+            }
+          },
+          "sliderAutoplay": {
+            "desktop": {
+              "value": "off"
+            }
+          },
+          "sliderDelay": {
+            "desktop": {
+              "value": "5"
+            }
+          },
+          "sliderArrows": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "sliderDots": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "columns": {
+            "desktop": {
+              "value": "3"
+            }
+          },
+          "tabletColumns": {
+            "desktop": {
+              "value": "2"
+            }
+          },
+          "mobileColumns": {
+            "desktop": {
+              "value": "1"
+            }
+          },
+          "perPage": {
+            "desktop": {
+              "value": "6"
+            }
+          },
+          "order": {
+            "desktop": {
+              "value": "newest"
+            }
+          },
+          "source": {
+            "desktop": {
+              "value": "all"
+            }
+          },
+          "productIds": {
+            "desktop": {
+              "value": ""
+            }
+          },
+          "showSummary": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showFilters": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showProduct": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showReviewText": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showAvatar": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showVerified": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showPhotos": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "showVideos": {
+            "desktop": {
+              "value": "on"
+            }
+          },
+          "backgroundColor": {
+            "desktop": {
+              "value": "#ffffff"
+            }
+          },
+          "textColor": {
+            "desktop": {
+              "value": "#17201e"
+            }
+          },
+          "accentColor": {
+            "desktop": {
+              "value": "#ff694d"
+            }
+          },
+          "starColor": {
+            "desktop": {
+              "value": "#ffb627"
+            }
+          },
+          "gap": {
+            "desktop": {
+              "value": "20px"
+            }
+          },
+          "radius": {
+            "desktop": {
+              "value": "10px"
+            }
+          }
+        }
+      },
+      "settings": {
+        "advanced": {
+          "mode": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentReviewDisplay",
+              "priority": 10,
+              "render": true,
+              "attrName": "reviews.advanced.mode",
+              "label": "Settings Source",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "saved": {
+                      "label": "Saved shortcode setting"
+                    },
+                    "custom": {
+                      "label": "Customize in this module"
+                    }
+                  }
+                }
+              },
+              "description": "Reuse a display saved under ReviQuo > Review Shortcode, or configure every option right here."
+            }
+          },
+          "layout": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 20,
+              "render": true,
+              "attrName": "reviews.advanced.layout",
+              "label": "Layout",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "list": {
+                      "label": "List"
+                    },
+                    "grid": {
+                      "label": "Grid"
+                    },
+                    "masonry": {
+                      "label": "Masonry"
+                    },
+                    "slider": {
+                      "label": "Slider"
+                    },
+                    "gallery": {
+                      "label": "Media Gallery"
+                    },
+                    "testimonial": {
+                      "label": "Testimonial"
+                    },
+                    "spotlight": {
+                      "label": "Spotlight"
+                    },
+                    "compact": {
+                      "label": "Compact List"
+                    },
+                    "reels": {
+                      "label": "Reels"
+                    },
+                    "marquee": {
+                      "label": "Marquee"
+                    },
+                    "timeline": {
+                      "label": "Timeline"
+                    },
+                    "accordion": {
+                      "label": "Accordion"
+                    },
+                    "chat": {
+                      "label": "Chat Bubbles"
+                    }
+                  }
+                }
+              },
+              "description": "Media Gallery lists reviews with photos or videos; Reels lists video reviews only."
+            }
+          },
+          "sliderAutoplay": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 30,
+              "render": true,
+              "attrName": "reviews.advanced.sliderAutoplay",
+              "label": "Autoplay",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "sliderDelay": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 40,
+              "render": true,
+              "attrName": "reviews.advanced.sliderDelay",
+              "label": "Autoplay Delay (s)",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 1,
+                  "max": 20,
+                  "step": 1,
+                  "minLimit": 1,
+                  "maxLimit": 20,
+                  "allowedUnits": [],
+                  "defaultUnit": ""
+                }
+              }
+            }
+          },
+          "sliderArrows": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 50,
+              "render": true,
+              "attrName": "reviews.advanced.sliderArrows",
+              "label": "Arrows",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "sliderDots": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 60,
+              "render": true,
+              "attrName": "reviews.advanced.sliderDots",
+              "label": "Dots",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "columns": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 70,
+              "render": true,
+              "attrName": "reviews.advanced.columns",
+              "label": "Desktop Columns",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 1,
+                  "max": 4,
+                  "step": 1,
+                  "minLimit": 1,
+                  "maxLimit": 4,
+                  "allowedUnits": [],
+                  "defaultUnit": ""
+                }
+              }
+            }
+          },
+          "tabletColumns": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 80,
+              "render": true,
+              "attrName": "reviews.advanced.tabletColumns",
+              "label": "Tablet Columns",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 1,
+                  "max": 4,
+                  "step": 1,
+                  "minLimit": 1,
+                  "maxLimit": 4,
+                  "allowedUnits": [],
+                  "defaultUnit": ""
+                }
+              }
+            }
+          },
+          "mobileColumns": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 90,
+              "render": true,
+              "attrName": "reviews.advanced.mobileColumns",
+              "label": "Mobile Columns",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 1,
+                  "max": 4,
+                  "step": 1,
+                  "minLimit": 1,
+                  "maxLimit": 4,
+                  "allowedUnits": [],
+                  "defaultUnit": ""
+                }
+              }
+            }
+          },
+          "perPage": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 100,
+              "render": true,
+              "attrName": "reviews.advanced.perPage",
+              "label": "Reviews Per Load",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 1,
+                  "max": 24,
+                  "step": 1,
+                  "minLimit": 1,
+                  "maxLimit": 24,
+                  "allowedUnits": [],
+                  "defaultUnit": ""
+                }
+              }
+            }
+          },
+          "order": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentLayout",
+              "priority": 110,
+              "render": true,
+              "attrName": "reviews.advanced.order",
+              "label": "Order",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "newest": {
+                      "label": "Newest first"
+                    },
+                    "oldest": {
+                      "label": "Oldest first"
+                    },
+                    "highest": {
+                      "label": "Highest rated"
+                    },
+                    "lowest": {
+                      "label": "Lowest rated"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "source": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentSource",
+              "priority": 120,
+              "render": true,
+              "attrName": "reviews.advanced.source",
+              "label": "Review Source",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "current": {
+                      "label": "Current product"
+                    },
+                    "selected": {
+                      "label": "Selected products"
+                    },
+                    "all": {
+                      "label": "All products"
+                    }
+                  }
+                }
+              },
+              "description": "Current product shows reviews of the product page the module is placed on."
+            }
+          },
+          "productIds": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentSource",
+              "priority": 130,
+              "render": true,
+              "attrName": "reviews.advanced.productIds",
+              "label": "Product IDs",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/text",
+                "type": "field"
+              },
+              "description": "Comma-separated IDs of the products whose reviews to show, e.g. 12, 34."
+            }
+          },
+          "showSummary": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 140,
+              "render": true,
+              "attrName": "reviews.advanced.showSummary",
+              "label": "Rating Summary",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showFilters": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 150,
+              "render": true,
+              "attrName": "reviews.advanced.showFilters",
+              "label": "Review Filters",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showProduct": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 160,
+              "render": true,
+              "attrName": "reviews.advanced.showProduct",
+              "label": "Product Name",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showReviewText": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 170,
+              "render": true,
+              "attrName": "reviews.advanced.showReviewText",
+              "label": "Review Text",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showAvatar": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 180,
+              "render": true,
+              "attrName": "reviews.advanced.showAvatar",
+              "label": "Customer Avatar",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showVerified": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 190,
+              "render": true,
+              "attrName": "reviews.advanced.showVerified",
+              "label": "Verified Badge",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showPhotos": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 200,
+              "render": true,
+              "attrName": "reviews.advanced.showPhotos",
+              "label": "Photos",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "showVideos": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "contentElements",
+              "priority": 210,
+              "render": true,
+              "attrName": "reviews.advanced.showVideos",
+              "label": "Videos",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/toggle",
+                "type": "field"
+              }
+            }
+          },
+          "backgroundColor": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 220,
+              "render": true,
+              "attrName": "reviews.advanced.backgroundColor",
+              "label": "Card Background",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
+            }
+          },
+          "textColor": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 230,
+              "render": true,
+              "attrName": "reviews.advanced.textColor",
+              "label": "Text Color",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
+            }
+          },
+          "accentColor": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 240,
+              "render": true,
+              "attrName": "reviews.advanced.accentColor",
+              "label": "Accent Color",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
+            }
+          },
+          "starColor": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 250,
+              "render": true,
+              "attrName": "reviews.advanced.starColor",
+              "label": "Star Color",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
+            }
+          },
+          "gap": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 260,
+              "render": true,
+              "attrName": "reviews.advanced.gap",
+              "label": "Card Gap",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 0,
+                  "max": 48,
+                  "step": 1,
+                  "minLimit": 0,
+                  "maxLimit": 48,
+                  "allowedUnits": [
+                    "px"
+                  ],
+                  "defaultUnit": "px"
+                }
+              }
+            }
+          },
+          "radius": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewColors",
+              "priority": 270,
+              "render": true,
+              "attrName": "reviews.advanced.radius",
+              "label": "Card Radius",
+              "category": "configuration",
+              "features": {
+                "responsive": false,
+                "hover": false,
+                "sticky": false,
+                "dynamicContent": false
+              },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": {
+                  "min": 0,
+                  "max": 32,
+                  "step": 1,
+                  "minLimit": 0,
+                  "maxLimit": 32,
+                  "allowedUnits": [
+                    "px"
+                  ],
+                  "defaultUnit": "px"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "display": {
+      "type": "object",
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": ""
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupSlug": "contentReviewDisplay",
+            "priority": 20,
+            "render": true,
+            "attrName": "display.innerContent",
+            "label": "Shortcode setting",
+            "description": "Select a saved display created under ReviQuo > Review Shortcode.",
+            "features": {
+              "responsive": false,
+              "hover": false,
+              "sticky": false,
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/select",
+              "type": "field",
+              "props": {
+                "options": {
+                  "": {
+                    "label": "Choose a shortcode setting"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "card": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-card",
+      "styleProps": {
+        "border": {},
+        "boxShadow": {},
+        "spacing": {
+          "selector": "{{selector}} .sktpr-shortcode-card, {{selector}} .sktpr-shortcode-chat-bubble"
+        }
+      },
+      "settings": {
+        "decoration": {
+          "spacing": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designCard",
+              "attrName": "card.decoration.spacing",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/spacing",
+                "props": {
+                  "grouped": true,
+                  "fieldLabel": "Card",
+                  "fields": {
+                    "margin": {
+                      "render": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "border": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designCard",
+              "attrName": "card.decoration.border",
+              "priority": 20,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/border",
+                "props": {
+                  "grouped": true,
+                  "fieldLabel": "Card"
+                }
+              }
+            }
+          },
+          "boxShadow": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designCard",
+              "attrName": "card.decoration.boxShadow",
+              "priority": 30,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/box-shadow",
+                "props": {
+                  "grouped": true,
+                  "fieldLabel": "Card"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-author strong, {{selector}} .sktpr-shortcode-testimonial-author strong, {{selector}} .sktpr-shortcode-row-meta strong, {{selector}} .sktpr-shortcode-accordion-title strong, {{selector}} .sktpr-shortcode-chat-head strong",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designAuthorText",
+              "attrName": "author.decoration.font",
+              "label": "Author Text",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "reviewText": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-content, {{selector}} .sktpr-shortcode-content p, {{selector}} .sktpr-shortcode-tile-text, {{selector}} .sktpr-shortcode-row-text, {{selector}} .sktpr-shortcode-accordion-excerpt",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designReviewText",
+              "attrName": "reviewText.decoration.font",
+              "label": "Review Text",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "productName": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-product",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designProductText",
+              "attrName": "productName.decoration.font",
+              "label": "Product Name",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "date": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-author > span:not(.sktpr-shortcode-product), {{selector}} .sktpr-shortcode-row-date, {{selector}} .sktpr-shortcode-testimonial-date, {{selector}} .sktpr-shortcode-timeline-date",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designDateText",
+              "attrName": "date.decoration.font",
+              "label": "Date Text",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "stars": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-stars",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designStars",
+              "attrName": "stars.decoration.font",
+              "label": "Star Rating",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-summary strong",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designSummary",
+              "attrName": "summary.decoration.font",
+              "label": "Average Rating",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "filters": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-filters button",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designFilters",
+              "attrName": "filters.decoration.font",
+              "label": "Filter Buttons",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "loadMore": {
+      "type": "object",
+      "selector": "{{selector}} .sktpr-shortcode-more",
+      "settings": {
+        "decoration": {
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designLoadMore",
+              "attrName": "loadMore.decoration.font",
+              "label": "Load More Button",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "dynamicSubgroupHost": true,
+                  "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "content": "auto",
+    "design": "auto",
+    "advanced": "auto",
+    "groups": {
+      "contentReviewDisplay": {
+        "panel": "content",
+        "priority": 10,
+        "groupName": "contentReviewDisplay",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Review Display"
+          }
+        }
+      },
+      "contentLayout": {
+        "panel": "content",
+        "priority": 20,
+        "groupName": "contentLayout",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Layout"
+          }
+        }
+      },
+      "contentSource": {
+        "panel": "content",
+        "priority": 30,
+        "groupName": "contentSource",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Reviews Source"
+          }
+        }
+      },
+      "contentElements": {
+        "panel": "content",
+        "priority": 40,
+        "groupName": "contentElements",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Elements"
+          }
+        }
+      },
+      "designReviewColors": {
+        "panel": "design",
+        "priority": 5,
+        "groupName": "designReviewColors",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Review Colors"
+          }
+        }
+      },
+      "designCard": {
+        "panel": "design",
+        "priority": 6,
+        "groupName": "designCard",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Review Card"
+          }
+        }
+      },
+      "designAuthorText": {
+        "panel": "design",
+        "priority": 7,
+        "groupName": "designAuthorText",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Author Text",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designReviewText": {
+        "panel": "design",
+        "priority": 8,
+        "groupName": "designReviewText",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Review Text",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designProductText": {
+        "panel": "design",
+        "priority": 9,
+        "groupName": "designProductText",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Product Name",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designDateText": {
+        "panel": "design",
+        "priority": 10,
+        "groupName": "designDateText",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Date Text",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designStars": {
+        "panel": "design",
+        "priority": 11,
+        "groupName": "designStars",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Star Rating",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designSummary": {
+        "panel": "design",
+        "priority": 12,
+        "groupName": "designSummary",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Average Rating",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designFilters": {
+        "panel": "design",
+        "priority": 13,
+        "groupName": "designFilters",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Filter Buttons",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      },
+      "designLoadMore": {
+        "panel": "design",
+        "priority": 14,
+        "groupName": "designLoadMore",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Load More Button",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true,
+            "dynamicSubgroupHostLayoutStyle": "moduleLayout"
+          }
+        }
+      }
+    }
+  },
+  "customCssFields": {
+    "reviewCard": {
+      "label": "Review Card",
+      "subName": "reviewCard",
+      "selectorSuffix": " .sktpr-shortcode-card"
+    },
+    "ratingSummary": {
+      "label": "Rating Summary",
+      "subName": "ratingSummary",
+      "selectorSuffix": " .sktpr-shortcode-summary"
+    },
+    "filterButtons": {
+      "label": "Filter Buttons",
+      "subName": "filterButtons",
+      "selectorSuffix": " .sktpr-shortcode-filters button"
+    },
+    "starRating": {
+      "label": "Star Rating",
+      "subName": "starRating",
+      "selectorSuffix": " .sktpr-shortcode-stars"
+    },
+    "avatar": {
+      "label": "Avatar",
+      "subName": "avatar",
+      "selectorSuffix": " .sktpr-shortcode-avatar img"
+    },
+    "loadMore": {
+      "label": "Load More Button",
+      "subName": "loadMore",
+      "selectorSuffix": " .sktpr-shortcode-more"
+    }
+  }
+}

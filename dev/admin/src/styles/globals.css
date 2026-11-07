@@ -1,0 +1,1826 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 33% 95%;
+    --foreground: 167 16% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 167 16% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 167 16% 11%;
+    --primary: 9 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 9 86% 56%;
+    --primary-strong: 8 65% 47%;
+    --secondary: 77 19% 93%;
+    --secondary-foreground: 167 16% 11%;
+    --muted: 77 19% 93%;
+    --muted-foreground: 143 4% 43%;
+    --accent: 153 38% 64%;
+    --accent-foreground: 167 16% 11%;
+    --destructive: 4 77% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 83 12% 87%;
+    --input: 83 12% 87%;
+    --ring: 8 65% 47%;
+    --radius: 0.75rem;
+    --success: 150 43% 32%;
+    --warning: 40 100% 58%;
+    --gradient-primary: linear-gradient(135deg, hsl(9 100% 65%), hsl(9 86% 56%));
+    --gradient-subtle: linear-gradient(180deg, hsl(45 33% 95%), hsl(77 19% 93%));
+    --shadow-soft: 0 1px 3px 0 hsl(167 16% 11% / 0.08);
+    --shadow-medium: 0 4px 10px -2px hsl(167 16% 11% / 0.12);
+    --shadow-strong: 0 12px 24px -6px hsl(167 16% 11% / 0.16);
+  }
+
+  #sktpr-admin-root,
+  #sktpr-shortcode-root {
+    @apply text-sm text-foreground antialiased;
+    font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+
+  #sktpr-admin-root *,
+  #sktpr-shortcode-root * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .sktpr-sc-app {
+    @apply mr-5 mt-5;
+  }
+
+  .sktpr-sc-topbar {
+    @apply flex min-h-[72px] items-center gap-10 rounded-t-xl border bg-card px-6;
+  }
+
+  .sktpr-sc-brand {
+    @apply flex shrink-0 items-center gap-3 text-foreground no-underline;
+  }
+
+  .sktpr-sc-brand > span {
+    @apply flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-primary text-primary-foreground shadow-medium;
+  }
+
+  .sktpr-sc-brand strong {
+    @apply text-base font-semibold;
+  }
+
+  .sktpr-sc-breadcrumb {
+    @apply flex items-center gap-5 text-muted-foreground;
+  }
+
+  .sktpr-sc-breadcrumb > span {
+    @apply text-xl font-normal text-border;
+  }
+
+  .sktpr-sc-breadcrumb strong {
+    @apply text-base font-semibold;
+  }
+
+  .sktpr-sc-resource-links {
+    @apply ml-auto flex items-center gap-2;
+  }
+
+  .sktpr-sc-resource-links a {
+    @apply inline-flex h-10 items-center gap-2 rounded-md border bg-card px-3.5 font-medium text-foreground no-underline transition-colors hover:border-primary/30 hover:bg-primary/5 hover:text-primary-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .sktpr-sc-header-actions {
+    @apply ml-auto flex shrink-0 items-center gap-2;
+  }
+
+  .sktpr-sc-shell,
+  .sktpr-sc-builder {
+    @apply m-0 overflow-hidden rounded-b-xl border border-t-0 bg-background shadow-soft;
+  }
+
+  .sktpr-sc-page-head,
+  .sktpr-sc-builder-head {
+    @apply flex min-h-[82px] items-center gap-4 border-b bg-background px-6 py-4;
+  }
+
+  .sktpr-sc-page-head {
+    @apply min-h-[120px] justify-between px-8;
+  }
+
+  .sktpr-sc-page-head > .sktpr-react-button {
+    @apply h-11 px-5;
+  }
+
+  .sktpr-sc-builder-actions {
+    @apply ml-auto flex shrink-0 items-center gap-2;
+  }
+
+  .sktpr-sc-page-head h1,
+  .sktpr-sc-builder-head h1 {
+    @apply m-0 text-2xl font-semibold leading-8 tracking-tight text-foreground;
+  }
+
+  .sktpr-sc-page-head p,
+  .sktpr-sc-builder-head p {
+    @apply m-0 text-sm text-muted-foreground;
+  }
+
+  .sktpr-sc-list-card {
+    @apply min-h-[420px] bg-card;
+  }
+
+  .sktpr-sc-list-toolbar {
+    @apply flex min-h-[74px] items-center gap-3 border-b px-8 py-3;
+  }
+
+  .sktpr-sc-list-search {
+    @apply relative flex h-11 w-[360px] items-center;
+  }
+
+  .sktpr-sc-list-search > svg {
+    @apply pointer-events-none absolute left-3.5 text-muted-foreground;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+
+  .sktpr-sc-list-search input,
+  .sktpr-sc-list-select select {
+    @apply h-11 rounded-md border border-input bg-card text-sm text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+    box-shadow: none;
+    line-height: 1.25rem;
+    margin: 0;
+    max-width: none;
+  }
+
+  .sktpr-sc-list-search input {
+    @apply w-full pr-3;
+    padding-left: 2.75rem;
+  }
+
+  .sktpr-sc-list-select {
+    @apply relative block h-11 w-[190px] shrink-0;
+  }
+
+  .sktpr-sc-list-select select {
+    @apply w-full cursor-pointer appearance-none pl-3 pr-10;
+    background-image: none;
+  }
+
+  .sktpr-sc-list-select > svg {
+    @apply pointer-events-none absolute right-3 text-muted-foreground;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sktpr-sc-list-count {
+    @apply ml-auto whitespace-nowrap font-semibold text-muted-foreground;
+  }
+
+  .sktpr-sc-bulk-actions {
+    @apply ml-auto flex items-center gap-3 rounded-md border border-destructive/20 bg-destructive/5 px-2 py-1.5 text-destructive;
+  }
+
+  .sktpr-sc-bulk-actions > strong {
+    @apply whitespace-nowrap text-sm font-semibold;
+  }
+
+  .sktpr-sc-bulk-actions > button {
+    @apply inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-md border-0 bg-destructive px-3 text-sm font-medium text-destructive-foreground transition-colors hover:bg-destructive/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .sktpr-sc-table-wrap {
+    @apply overflow-x-auto;
+  }
+
+  .sktpr-sc-empty {
+    @apply flex min-h-[420px] flex-col items-center justify-center gap-3 px-6 text-center text-muted-foreground;
+  }
+
+  .sktpr-sc-empty h2 {
+    @apply m-0 text-lg font-semibold text-foreground;
+  }
+
+  .sktpr-sc-empty p {
+    @apply m-0 max-w-md;
+  }
+
+  .sktpr-sc-table {
+    @apply w-full min-w-[1050px] border-collapse text-left text-sm;
+  }
+
+  .sktpr-sc-table th {
+    @apply h-12 border-b bg-muted/40 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  .sktpr-sc-table th:last-child {
+    @apply text-center;
+  }
+
+  .sktpr-sc-table td {
+    @apply h-[70px] border-b px-5 py-3 text-muted-foreground;
+  }
+
+  .sktpr-sc-table tbody tr {
+    @apply transition-colors hover:bg-muted/20;
+  }
+
+  .sktpr-sc-check-column {
+    @apply w-16 pl-8 pr-2;
+  }
+
+  .sktpr-sc-check-column input {
+    @apply inline-block h-5 w-5 cursor-pointer appearance-none rounded border border-input bg-card align-middle shadow-none focus:outline-none focus:ring-2 focus:ring-primary/30;
+    margin: 0;
+  }
+
+  .sktpr-sc-check-column input:checked {
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.25 6.5 11l6-6.25' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+  }
+
+  .sktpr-sc-check-column input:checked::before {
+    content: none;
+  }
+
+  .sktpr-sc-name {
+    @apply cursor-pointer whitespace-nowrap border-0 bg-transparent p-0 font-semibold text-foreground hover:text-primary-strong;
+  }
+
+  .sktpr-sc-code {
+    @apply inline-flex cursor-pointer items-center gap-3 whitespace-nowrap rounded-md border bg-muted/40 px-3 py-2 font-mono text-sm text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5;
+  }
+
+  .sktpr-sc-source-badge {
+    @apply inline-flex rounded-md border bg-muted/40 px-2.5 py-1 text-xs font-medium lowercase text-muted-foreground;
+  }
+
+  .sktpr-sc-source-badge.is-current {
+    @apply border-primary/20 bg-primary/5 text-primary-strong;
+  }
+
+  .sktpr-sc-layout-badge {
+    @apply inline-flex items-center gap-2 rounded-md border bg-card px-2.5 py-1.5 lowercase text-foreground;
+  }
+
+  .sktpr-sc-updated {
+    @apply whitespace-nowrap;
+  }
+
+  .sktpr-sc-row-actions {
+    @apply flex justify-center gap-3;
+  }
+
+  .sktpr-sc-row-actions button,
+  .sktpr-sc-icon-button {
+    @apply inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .sktpr-sc-row-actions button {
+    @apply h-10 w-10 text-foreground;
+  }
+
+  .sktpr-sc-row-actions .sktpr-sc-table-delete {
+    @apply border-destructive/30 text-destructive hover:border-destructive/50 hover:bg-destructive/5 hover:text-destructive;
+  }
+
+  .sktpr-sc-no-results {
+    @apply flex min-h-48 flex-col items-center justify-center gap-2 text-muted-foreground;
+  }
+
+  .sktpr-sc-no-results strong {
+    @apply text-foreground;
+  }
+
+  .sktpr-sc-list-footer {
+    @apply flex min-h-[78px] items-center justify-between px-8 text-muted-foreground;
+  }
+
+  .sktpr-sc-list-footer > div {
+    @apply flex gap-3;
+  }
+
+  .sktpr-sc-list-footer button {
+    @apply inline-flex h-10 min-w-[104px] items-center justify-center rounded-md border bg-card px-4 font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:bg-muted/40 disabled:text-muted-foreground disabled:opacity-60;
+  }
+
+  .sktpr-sc-builder-grid {
+    @apply grid min-h-0 bg-background p-5;
+    height: 720px;
+    grid-template-columns: minmax(0, 430px) minmax(0, 1fr);
+    gap: 20px;
+    transition: grid-template-columns 320ms cubic-bezier(0.4, 0, 0.2, 1), gap 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sktpr-sc-sidebar {
+    @apply relative h-full min-h-0 min-w-0;
+  }
+
+  .sktpr-sc-builder-grid.is-sidebar-collapsed {
+    grid-template-columns: minmax(0, 0) minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .sktpr-sc-builder-grid.is-sidebar-collapsed .sktpr-sc-controls {
+    @apply pointer-events-none;
+    opacity: 0;
+    transform: translateX(-14px);
+    visibility: hidden;
+    transition: opacity 160ms ease, transform 280ms ease, visibility 0s linear 280ms;
+  }
+
+  .sktpr-sc-sidebar-toggle {
+    @apply absolute top-1/2 z-20 inline-flex w-[18px] cursor-pointer items-center justify-center rounded-r-md border border-l-0 bg-white p-0 text-foreground shadow-soft hover:text-primary-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    height: 3.75rem;
+    right: -18px;
+    transform: translateY(-50%);
+    transition: right 320ms cubic-bezier(0.4, 0, 0.2, 1), color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .sktpr-sc-sidebar-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sktpr-sc-builder-grid.is-sidebar-collapsed .sktpr-sc-sidebar-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .sktpr-sc-builder-grid.is-sidebar-collapsed .sktpr-sc-sidebar-toggle {
+    right: -30px;
+  }
+
+  .sktpr-sc-controls {
+    @apply h-full overflow-hidden rounded-xl border bg-card;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: opacity 200ms ease 80ms, transform 300ms cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
+  }
+
+  .sktpr-sc-settings-panel {
+    @apply flex h-full min-h-0 flex-col bg-card px-5 pb-5;
+  }
+
+  .sktpr-sc-tabs {
+    @apply flex shrink-0 border-b bg-card;
+  }
+
+  .sktpr-sc-tabs button {
+    @apply relative min-h-12 flex-1 cursor-pointer whitespace-nowrap border-0 bg-transparent px-2 text-sm font-medium text-foreground transition-colors hover:text-primary-strong focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring;
+  }
+
+  .sktpr-sc-tabs button::after {
+    content: '';
+    @apply absolute bottom-[-1px] left-0 right-0 h-0.5 origin-center scale-x-0 bg-primary transition-transform duration-200;
+  }
+
+  .sktpr-sc-tabs button.is-active {
+    @apply text-primary-strong;
+  }
+
+  .sktpr-sc-tabs button.is-active::after {
+    @apply scale-x-100;
+  }
+
+  .sktpr-sc-tab-panel {
+    @apply min-h-0 flex-1 animate-tab-in overflow-y-auto pr-1 motion-reduce:animate-none;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.35) transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+  }
+
+  .sktpr-sc-form-row {
+    @apply grid min-h-[72px] grid-cols-[42%_58%] items-center border-b py-3.5 text-sm;
+  }
+
+  .sktpr-sc-row-label {
+    @apply pr-4 font-medium text-foreground;
+  }
+
+  .sktpr-sc-row-control {
+    @apply min-w-0;
+  }
+
+  .sktpr-sc-control {
+    @apply flex h-11 w-full rounded border border-input bg-card px-3 text-sm font-normal text-foreground shadow-none ring-offset-background transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:cursor-not-allowed disabled:bg-muted disabled:opacity-60;
+  }
+
+  select.sktpr-sc-control {
+    @apply cursor-pointer appearance-none pr-9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2369716c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+  }
+
+  .sktpr-sc-inline-code {
+    @apply flex items-stretch gap-2;
+  }
+
+  .sktpr-sc-inline-code code {
+    @apply flex min-h-10 min-w-0 flex-1 items-center justify-center overflow-hidden rounded-sm bg-[#eef4ef] px-0 text-center font-mono text-xs text-[#17201e];
+  }
+
+  .sktpr-sc-inline-code button {
+    @apply inline-flex min-h-10 cursor-pointer items-center justify-center gap-1 rounded-sm border-0 bg-[#eef4ef] px-2.5 text-xs font-semibold text-[#17201e] transition-colors hover:bg-[#dbece1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .sktpr-sc-compact-toggle {
+    @apply inline-flex cursor-pointer items-center gap-2.5;
+  }
+
+  .sktpr-sc-compact-toggle input {
+    @apply sr-only;
+  }
+
+  .sktpr-sc-compact-toggle i {
+    @apply relative block h-6 w-[46px] shrink-0 rounded-full bg-input transition-colors duration-200;
+  }
+
+  .sktpr-sc-compact-toggle i::after {
+    content: '';
+    @apply absolute left-1 top-1 h-4 w-4 rounded-full bg-white shadow transition-transform duration-200;
+  }
+
+  .sktpr-sc-compact-toggle input:checked + i {
+    @apply bg-primary;
+  }
+
+  .sktpr-sc-compact-toggle input:checked + i::after {
+    @apply translate-x-[22px];
+  }
+
+  .sktpr-sc-compact-toggle input:focus-visible + i {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  .sktpr-sc-compact-toggle.is-disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .sktpr-sc-compact-toggle span {
+    @apply text-xs font-medium text-primary-strong;
+  }
+
+  .sktpr-sc-label-with-badge {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .sktpr-sc-pro-badge {
+    @apply inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-strong;
+  }
+
+  .sktpr-sc-range-control {
+    @apply flex items-center gap-3;
+  }
+
+  .sktpr-sc-number {
+    @apply h-10 w-[54px] shrink-0 rounded border border-input bg-card px-2 text-center text-xs text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+
+  .sktpr-sc-range-control input[type='range'] {
+    @apply h-5 min-w-0 flex-1 cursor-pointer accent-primary;
+  }
+
+  .sktpr-sc-color-control {
+    @apply flex items-center gap-2;
+  }
+
+  .sktpr-sc-color-control input[type='color'] {
+    @apply h-10 w-11 shrink-0 cursor-pointer rounded border border-input bg-card p-1;
+  }
+
+  .sktpr-sc-section {
+    @apply mb-5 overflow-hidden rounded-xl border bg-card shadow-soft;
+  }
+
+  .sktpr-sc-section-head {
+    @apply border-b bg-muted/30 px-5 py-4;
+  }
+
+  .sktpr-sc-section-head h3 {
+    @apply m-0 text-base font-semibold text-foreground;
+  }
+
+  .sktpr-sc-section-head p {
+    @apply mb-0 mt-1 text-xs text-muted-foreground;
+  }
+
+  .sktpr-sc-section-body {
+    @apply space-y-4 p-5;
+  }
+
+  .sktpr-sc-section-body .sktpr-react-toggle {
+    @apply m-0;
+  }
+
+  .sktpr-sc-two {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  .sktpr-sc-layout-options {
+    @apply grid grid-cols-2 gap-3;
+  }
+
+  .sktpr-sc-layout-options button {
+    @apply flex h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border bg-card font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .sktpr-sc-layout-options button.is-active {
+    @apply border-primary bg-primary/5 text-primary-strong ring-1 ring-primary/20;
+  }
+
+  .sktpr-sc-color {
+    @apply flex items-center gap-2;
+  }
+
+  .sktpr-sc-color input[type='color'] {
+    @apply h-10 w-12 shrink-0 cursor-pointer rounded-md border bg-card p-1;
+  }
+
+  .sktpr-sc-picker {
+    @apply relative;
+  }
+
+  .sktpr-sc-picker-results {
+    @apply absolute left-0 right-0 top-[46px] z-20 max-h-52 overflow-auto rounded-lg border bg-card p-1 shadow-strong;
+  }
+
+  .sktpr-sc-picker-results button {
+    @apply flex w-full cursor-pointer items-center justify-between rounded-md border-0 bg-transparent px-3 py-2 text-left text-sm text-foreground hover:bg-muted;
+  }
+
+  .sktpr-sc-picker-results small {
+    @apply text-muted-foreground;
+  }
+
+  .sktpr-sc-picker-results p {
+    @apply m-0 px-3 py-4 text-center text-sm text-muted-foreground;
+  }
+
+  .sktpr-sc-chips {
+    @apply mt-2 flex flex-wrap gap-1.5;
+  }
+
+  .sktpr-sc-chips > span {
+    @apply inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary-strong;
+  }
+
+  .sktpr-sc-chips button {
+    @apply inline-flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-0 bg-transparent p-0 text-primary-strong hover:bg-primary/15;
+  }
+
+  .sktpr-react-button.sktpr-sc-save-button {
+    @apply h-11 px-5 hover:shadow-medium;
+  }
+
+  .sktpr-sc-preview-workspace {
+    @apply flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border bg-card;
+  }
+
+  .sktpr-sc-preview-toolbar {
+    @apply flex min-h-[70px] shrink-0 items-center justify-between gap-4 border-b bg-card px-5;
+  }
+
+  .sktpr-sc-preview-title {
+    @apply flex items-center gap-3;
+  }
+
+  .sktpr-sc-preview-title h2 {
+    @apply m-0 text-base font-semibold text-foreground;
+  }
+
+  .sktpr-sc-preview-actions {
+    @apply flex items-center gap-3;
+  }
+
+  .sktpr-sc-device-controls {
+    @apply flex items-center gap-2;
+  }
+
+  .sktpr-sc-device-controls button {
+    @apply inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-lg border bg-card text-muted-foreground transition-all duration-200 hover:border-primary/40 hover:bg-primary/5 hover:text-primary-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .sktpr-sc-device-controls button.is-active {
+    @apply border-primary bg-primary/5 text-primary-strong ring-1 ring-primary/20;
+  }
+
+  .sktpr-sc-preview-stage {
+    @apply flex min-h-0 flex-1 items-start justify-center overflow-auto bg-muted/30 p-6;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.35) transparent;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+  }
+
+  .sktpr-sc-tab-panel::-webkit-scrollbar,
+  .sktpr-sc-preview-stage::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .sktpr-sc-tab-panel::-webkit-scrollbar-track,
+  .sktpr-sc-preview-stage::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .sktpr-sc-tab-panel::-webkit-scrollbar-thumb,
+  .sktpr-sc-preview-stage::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: hsl(var(--muted-foreground) / 0.35);
+    background-clip: padding-box;
+  }
+
+  .sktpr-sc-device-frame {
+    @apply mx-auto max-w-full transition-[width] duration-300 ease-smooth motion-reduce:transition-none;
+  }
+
+  .sktpr-sc-preview-canvas {
+    @apply min-h-[520px] overflow-auto rounded-xl border bg-white p-6 shadow-soft transition-opacity duration-200;
+  }
+
+  .sktpr-sc-preview-canvas.is-loading {
+    @apply opacity-60;
+  }
+
+  .sktpr-sc-device-frame.is-desktop .sktpr-shortcode--grid .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-desktop .sktpr-shortcode--masonry .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-tablet .sktpr-shortcode--grid .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-tablet-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-tablet .sktpr-shortcode--masonry .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-tablet-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--grid .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-mobile-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--masonry .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-mobile-columns), minmax(0, 1fr));
+  }
+
+  /* The storefront switches these layouts with viewport media queries; the
+     device frames mirror them so tablet/mobile previews match. */
+  .sktpr-sc-device-frame.is-desktop .sktpr-shortcode--gallery .sktpr-shortcode-reviews,
+  .sktpr-sc-device-frame.is-desktop .sktpr-shortcode--testimonial .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-desktop .sktpr-shortcode--reels {
+    --sktpr-sc-reels-columns: var(--sktpr-sc-columns);
+  }
+
+  .sktpr-sc-device-frame.is-tablet .sktpr-shortcode--gallery .sktpr-shortcode-reviews,
+  .sktpr-sc-device-frame.is-tablet .sktpr-shortcode--testimonial .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-tablet-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-tablet .sktpr-shortcode--reels {
+    --sktpr-sc-reels-columns: var(--sktpr-sc-tablet-columns);
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--gallery .sktpr-shortcode-reviews,
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--testimonial .sktpr-shortcode-reviews {
+    grid-template-columns: repeat(var(--sktpr-sc-mobile-columns), minmax(0, 1fr));
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--reels {
+    --sktpr-sc-reels-columns: calc(var(--sktpr-sc-mobile-columns) + 0.25);
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--spotlight .sktpr-shortcode-reviews {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--spotlight .sktpr-shortcode-reviews > .sktpr-shortcode-card {
+    position: static;
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode--timeline .sktpr-shortcode-reviews::before {
+    left: 7px;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-timeline-item,
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-timeline-item:nth-child(even) {
+    width: auto;
+    margin-left: 0;
+    padding: 0 0 0 30px;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-timeline-item::after,
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-timeline-item:nth-child(even)::after {
+    right: auto;
+    left: 0;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-timeline-item .sktpr-shortcode-timeline-date {
+    text-align: left;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-row {
+    flex-wrap: wrap;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-row .sktpr-review-media {
+    max-width: none;
+    margin-left: 48px;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-chat-bubble {
+    max-width: calc(100% - 50px);
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-accordion-item > summary {
+    align-items: flex-start;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-accordion-meta .sktpr-shortcode-row-date {
+    display: none;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-accordion-excerpt {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .sktpr-sc-device-frame.is-mobile .sktpr-shortcode-accordion-body {
+    padding-left: 16px;
+  }
+
+  .sktpr-sc-builder:fullscreen,
+  .sktpr-sc-builder.is-builder-fallback-expanded {
+    @apply flex h-screen w-screen flex-col overflow-hidden rounded-none border-0 bg-background;
+  }
+
+  .sktpr-sc-builder.is-builder-fallback-expanded {
+    @apply fixed inset-0;
+    z-index: 2147483647;
+  }
+
+  .sktpr-sc-builder:fullscreen .sktpr-sc-builder-grid,
+  .sktpr-sc-builder.is-builder-fallback-expanded .sktpr-sc-builder-grid {
+    @apply min-h-0 flex-1 overflow-hidden;
+    height: auto;
+  }
+
+  body.sktpr-sc-fullscreen-is-active {
+    overflow: hidden;
+  }
+
+  body.sktpr-sc-fullscreen-is-active #wpadminbar,
+  body.sktpr-sc-fullscreen-is-active #adminmenumain {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  @media (max-width: 1100px) {
+    .sktpr-sc-builder-grid,
+    .sktpr-sc-builder-grid.is-sidebar-collapsed {
+      @apply grid-cols-1;
+      height: auto;
+    }
+
+    .sktpr-sc-sidebar,
+    .sktpr-sc-preview-workspace {
+      height: 620px;
+    }
+
+    .sktpr-sc-builder-grid.is-sidebar-collapsed .sktpr-sc-controls {
+      @apply visible pointer-events-auto translate-x-0 opacity-100;
+    }
+
+    .sktpr-sc-sidebar-toggle {
+      @apply hidden;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sktpr-sc-builder-grid,
+    .sktpr-sc-controls,
+    .sktpr-sc-sidebar-toggle,
+    .sktpr-sc-sidebar-toggle svg {
+      transition-duration: 0.01ms;
+    }
+  }
+
+  @media (max-width: 782px) {
+    .sktpr-sc-app {
+      @apply mr-3 mt-3;
+    }
+
+    .sktpr-sc-topbar {
+      @apply flex-wrap gap-2 px-4 py-3;
+    }
+
+    .sktpr-sc-header-actions {
+      @apply ml-auto justify-end;
+    }
+
+    .sktpr-sc-resource-links {
+      @apply ml-auto;
+    }
+
+    .sktpr-sc-breadcrumb {
+      @apply gap-3;
+    }
+
+    .sktpr-sc-page-head,
+    .sktpr-sc-builder-head {
+      @apply flex-wrap px-4;
+    }
+
+    .sktpr-sc-builder-actions {
+      @apply w-full justify-end;
+    }
+
+    .sktpr-sc-page-head {
+      @apply items-start;
+    }
+
+    .sktpr-sc-page-head .sktpr-react-button {
+      @apply w-full;
+    }
+
+    .sktpr-sc-list-toolbar {
+      @apply flex-col items-stretch px-4 py-4;
+    }
+
+    .sktpr-sc-list-search,
+    .sktpr-sc-list-select {
+      @apply w-full;
+    }
+
+    .sktpr-sc-list-count {
+      @apply ml-0 pt-1;
+    }
+
+    .sktpr-sc-bulk-actions {
+      @apply ml-0 justify-between;
+    }
+
+    .sktpr-sc-list-footer {
+      @apply flex-col items-stretch gap-3 px-4 py-4;
+    }
+
+    .sktpr-sc-list-footer > div {
+      @apply grid grid-cols-2;
+    }
+
+    .sktpr-sc-list-footer button {
+      @apply min-w-0;
+    }
+
+    .sktpr-sc-controls {
+      @apply p-0;
+    }
+
+    .sktpr-sc-two {
+      @apply grid-cols-1;
+    }
+
+    .sktpr-sc-settings-panel {
+      @apply px-3 pb-3;
+    }
+
+    .sktpr-sc-tabs {
+      @apply overflow-x-auto;
+    }
+
+    .sktpr-sc-tabs button {
+      @apply min-w-[132px];
+    }
+
+    .sktpr-sc-form-row {
+      @apply grid-cols-1 items-start gap-2;
+    }
+
+    .sktpr-sc-row-label {
+      @apply pr-0;
+    }
+
+    .sktpr-sc-builder-grid {
+      @apply gap-3 p-3;
+    }
+
+    .sktpr-sc-sidebar,
+    .sktpr-sc-preview-workspace {
+      height: 560px;
+    }
+
+    .sktpr-sc-preview-toolbar {
+      @apply flex-wrap px-3 py-3;
+    }
+
+    .sktpr-sc-preview-actions {
+      @apply w-full justify-between;
+    }
+
+    .sktpr-sc-preview-stage {
+      @apply p-3;
+    }
+
+    .sktpr-sc-preview-canvas {
+      @apply min-h-[410px] p-4;
+    }
+
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .sktpr-react-button {
+    @apply inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-200 ease-smooth hover:bg-primary-hover active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .sktpr-react-button--secondary {
+    @apply border border-input bg-background text-foreground shadow-none hover:bg-muted hover:text-foreground;
+  }
+
+  .sktpr-react-button--destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+  }
+
+  /* Cards */
+  .sktpr-card {
+    @apply mb-6 rounded-lg border bg-card p-6 shadow-soft;
+  }
+
+  .sktpr-card-title {
+    @apply m-0 flex items-center gap-2.5 text-xl font-semibold leading-none tracking-tight text-foreground;
+  }
+
+  .sktpr-badge {
+    @apply inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-semibold tracking-normal text-secondary-foreground;
+  }
+
+  .sktpr-card-desc {
+    @apply m-0 mt-1.5 text-sm text-muted-foreground;
+  }
+
+  .sktpr-card-content {
+    @apply mt-6;
+  }
+
+  /* Form fields */
+  .sktpr-field {
+    @apply flex flex-col gap-2 text-sm font-medium leading-none text-foreground;
+  }
+
+  .sktpr-field small {
+    @apply text-sm font-normal leading-normal text-muted-foreground;
+  }
+
+  .sktpr-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm font-normal text-foreground ring-offset-background transition-colors placeholder:text-muted-foreground focus:border-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .sktpr-select {
+    @apply flex h-10 w-full cursor-pointer appearance-none rounded-md border border-input bg-background px-3 py-2 pr-9 text-sm font-normal text-foreground ring-offset-background transition-colors focus:border-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2369716c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 12px;
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+  }
+
+  .sktpr-textarea {
+    @apply flex min-h-[140px] w-full resize-y rounded-md border border-input bg-background px-3 py-2 text-sm font-normal leading-normal text-foreground ring-offset-background transition-colors placeholder:text-muted-foreground focus:border-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .sktpr-email-content-grid {
+    @apply grid grid-cols-2 gap-4 border-t border-border px-5 py-4;
+  }
+
+  .sktpr-email-sender-grid {
+    @apply grid grid-cols-2 gap-4 border-t border-border px-5 py-4;
+  }
+
+  .sktpr-reminder-rules-head {
+    @apply flex items-center gap-3 px-5 py-4;
+  }
+
+  .sktpr-reminder-rules-head h3 {
+    @apply m-0 text-sm font-semibold text-foreground;
+  }
+
+  .sktpr-reminder-rules-head p {
+    @apply m-0 mt-0.5 text-xs leading-normal text-muted-foreground;
+  }
+
+  .sktpr-reminder-rules-head .sktpr-react-button {
+    @apply min-h-11;
+  }
+
+  .sktpr-reminder-rules {
+    @apply grid gap-3 border-t border-border bg-muted/20 p-4;
+  }
+
+  .sktpr-reminder-rule {
+    @apply overflow-hidden rounded-lg border border-border bg-card shadow-soft;
+  }
+
+  .sktpr-reminder-rule-head {
+    @apply flex min-h-[60px] items-center gap-2 pr-2;
+  }
+
+  .sktpr-reminder-rule-toggle {
+    @apply flex min-h-[60px] min-w-0 flex-1 cursor-pointer items-center gap-3 border-0 bg-transparent px-4 text-left text-foreground transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring;
+  }
+
+  .sktpr-reminder-rule-toggle strong {
+    @apply block truncate text-sm font-semibold;
+  }
+
+  .sktpr-reminder-rule-toggle small {
+    @apply mt-0.5 block truncate text-xs font-normal text-muted-foreground;
+  }
+
+  .sktpr-reminder-rule-index {
+    @apply flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary-strong;
+  }
+
+  .sktpr-reminder-rule-delete {
+    @apply flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-md border-0 bg-transparent text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .sktpr-reminder-rule-body {
+    @apply grid gap-4 border-t border-border p-4;
+  }
+
+  .sktpr-reminder-rule-delivery {
+    @apply grid grid-cols-2 gap-4;
+  }
+
+  .sktpr-field-error {
+    color: hsl(var(--destructive)) !important;
+  }
+
+  .sktpr-input.is-invalid,
+  .sktpr-textarea.is-invalid {
+    @apply border-destructive focus-visible:ring-destructive;
+  }
+
+  .sktpr-reminder-empty {
+    @apply flex min-h-32 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-border bg-card p-6 text-center text-muted-foreground;
+  }
+
+  .sktpr-reminder-empty p {
+    @apply m-0 max-w-sm text-sm;
+  }
+
+  .sktpr-email-content-heading {
+    @apply flex min-h-9 items-center justify-between gap-4;
+  }
+
+  .sktpr-email-content-tabs {
+    @apply inline-flex rounded-md bg-muted p-1;
+  }
+
+  .sktpr-email-content-tabs button {
+    @apply min-h-11 cursor-pointer rounded border-0 bg-transparent px-3 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1;
+  }
+
+  .sktpr-email-content-tabs button.is-active {
+    @apply bg-card text-foreground shadow-soft;
+  }
+
+  .sktpr-email-preview {
+    @apply overflow-hidden rounded-lg border border-border bg-muted/40;
+  }
+
+  .sktpr-email-preview-meta {
+    @apply border-b border-border bg-card px-4 py-3;
+  }
+
+  .sktpr-email-preview-badge {
+    @apply inline-flex rounded bg-primary/10 px-1.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide text-primary-strong;
+  }
+
+  .sktpr-email-preview-meta dl {
+    @apply m-0 mt-2 grid gap-1.5;
+  }
+
+  .sktpr-email-preview-meta dl > div {
+    @apply grid grid-cols-[64px_minmax(0,1fr)] gap-2;
+  }
+
+  .sktpr-email-preview-meta dt {
+    @apply text-xs font-medium text-muted-foreground;
+  }
+
+  .sktpr-email-preview-meta dd {
+    @apply m-0 min-w-0 break-words text-xs font-medium leading-normal text-foreground;
+  }
+
+  .sktpr-email-preview-frame {
+    @apply block min-h-[440px] w-full border-0 bg-white;
+  }
+
+  @media (max-width: 782px) {
+    .sktpr-email-content-grid {
+      @apply grid-cols-1;
+    }
+
+    .sktpr-email-sender-grid,
+    .sktpr-reminder-rule-delivery {
+      @apply grid-cols-1;
+    }
+
+    .sktpr-reminder-rules-head {
+      @apply flex-wrap;
+    }
+
+    .sktpr-reminder-rules-head .sktpr-react-button {
+      @apply min-h-11 w-full;
+    }
+
+    .sktpr-email-content-heading {
+      @apply items-start;
+    }
+
+    .sktpr-email-preview-frame {
+      @apply min-h-[380px];
+    }
+  }
+
+  .sktpr-color {
+    @apply h-10 w-full cursor-pointer rounded-md border border-input bg-background p-1;
+  }
+
+  .sktpr-range {
+    @apply h-5 w-full cursor-pointer accent-primary;
+  }
+
+  /* Toggle switch */
+  .sktpr-react-toggle {
+    @apply flex cursor-pointer select-none items-center justify-between gap-4 border-t border-border py-4;
+  }
+
+  .sktpr-react-toggle:first-of-type {
+    @apply border-t-0 pt-0;
+  }
+
+  .sktpr-react-toggle:last-of-type {
+    @apply pb-0;
+  }
+
+  .sktpr-react-toggle span {
+    @apply flex flex-col gap-1;
+  }
+
+  .sktpr-react-toggle span strong {
+    @apply text-sm font-medium leading-none text-foreground;
+  }
+
+  .sktpr-react-toggle span small {
+    @apply text-sm font-normal text-muted-foreground;
+  }
+
+  .sktpr-react-toggle.sktpr-react-toggle--sub {
+    @apply ml-1 border-t-0 border-l-2 border-border py-3 pl-5;
+  }
+
+  .sktpr-react-toggle--sub span strong {
+    @apply font-normal;
+  }
+
+  .sktpr-subgroup {
+    @apply transition-opacity duration-300 ease-smooth;
+  }
+
+  .sktpr-subgroup.is-disabled {
+    @apply pointer-events-none select-none opacity-50;
+  }
+
+  .sktpr-react-toggle input[type='checkbox'] {
+    @apply sr-only;
+  }
+
+  .sktpr-react-toggle i {
+    @apply relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input transition-colors duration-300 ease-smooth;
+  }
+
+  .sktpr-react-toggle i::after {
+    content: '';
+    @apply pointer-events-none block h-5 w-5 translate-x-0 rounded-full bg-card shadow-md transition-transform duration-300 ease-smooth;
+  }
+
+  .sktpr-react-toggle input:checked + i {
+    @apply bg-primary;
+  }
+
+  .sktpr-react-toggle input:checked + i::after {
+    @apply translate-x-5;
+  }
+
+  .sktpr-react-toggle input:focus-visible + i {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* General page — mockup redesign */
+  .sktpr-gcard {
+    @apply mb-4 overflow-hidden rounded-xl border border-border bg-card shadow-soft;
+  }
+
+  .sktpr-gcard-head {
+    @apply flex items-center gap-2.5 px-5 pb-3 pt-4;
+  }
+
+  .sktpr-gcard-icon {
+    @apply flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary-strong;
+  }
+
+  .sktpr-gcard-icon--neutral {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .sktpr-gcard-titlerow {
+    @apply flex items-center gap-2;
+  }
+
+  .sktpr-gcard-titlerow h3 {
+    @apply m-0 text-sm font-semibold tracking-tight text-foreground;
+  }
+
+  .sktpr-gtag {
+    @apply rounded bg-muted px-1.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide text-muted-foreground;
+  }
+
+  .sktpr-gcard-sub {
+    @apply mt-0.5 text-xs text-muted-foreground;
+  }
+
+  .sktpr-grow {
+    @apply flex items-start justify-between gap-6 border-t border-border px-5 py-3.5;
+  }
+
+  .sktpr-grow-text {
+    @apply max-w-[420px];
+  }
+
+  .sktpr-grow-title {
+    @apply text-sm font-medium text-foreground;
+  }
+
+  .sktpr-grow-desc {
+    @apply mt-0.5 text-xs leading-normal text-muted-foreground;
+  }
+
+  .sktpr-grow-control {
+    @apply shrink-0 pt-0.5;
+  }
+
+  .sktpr-gsub {
+    @apply relative pl-5;
+  }
+
+  .sktpr-gsub::before {
+    content: '';
+    @apply absolute bottom-0 left-2 top-0 w-px bg-border;
+  }
+
+  .sktpr-gsubrow {
+    @apply relative flex items-start justify-between gap-6 py-3 pr-5;
+  }
+
+  .sktpr-gsubrow::before {
+    content: '';
+    @apply absolute -left-3 top-[18px] h-px w-3 bg-border;
+  }
+
+  .sktpr-gsubrow .sktpr-grow-title {
+    @apply text-[13px] font-medium text-muted-foreground;
+  }
+
+  .sktpr-gsubrow.is-disabled .sktpr-grow-title,
+  .sktpr-gsubrow.is-disabled .sktpr-grow-desc {
+    @apply opacity-50;
+  }
+
+  /* Standalone switch used on the redesigned General page */
+  .sktpr-switch {
+    @apply relative inline-flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-md;
+  }
+
+  .sktpr-switch::before {
+    content: '';
+    @apply absolute h-5 w-[34px] rounded-full bg-input transition-colors duration-300 ease-smooth;
+  }
+
+  .sktpr-switch::after {
+    content: '';
+    @apply absolute left-[7px] top-[14px] h-4 w-4 rounded-full bg-white shadow transition-transform duration-300 ease-smooth;
+  }
+
+  .sktpr-switch-input:checked + .sktpr-switch::before {
+    @apply bg-primary;
+  }
+
+  .sktpr-switch-input:checked + .sktpr-switch::after {
+    @apply translate-x-[14px];
+  }
+
+  .sktpr-switch-input:disabled + .sktpr-switch {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .sktpr-switch-input:focus-visible + .sktpr-switch {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Toast */
+  .sktpr-toast-wrap {
+    @apply fixed bottom-6 right-6 z-[99999];
+  }
+
+  .sktpr-toast {
+    @apply flex w-96 max-w-[calc(100vw-3rem)] items-start gap-3 rounded-lg border bg-card p-4 shadow-strong animate-toast-in;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sktpr-toast,
+    .sktpr-modal-overlay,
+    .sktpr-modal {
+      @apply animate-none;
+    }
+  }
+
+  /* Confirmation modal */
+  .sktpr-modal-overlay {
+    @apply fixed inset-0 z-[100000] flex items-center justify-center bg-black/50 p-4 animate-fade-in;
+  }
+
+  .sktpr-modal {
+    @apply w-full max-w-md rounded-lg border bg-card p-6 shadow-strong animate-scale-in;
+  }
+
+  .sktpr-modal-icon {
+    @apply mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-destructive/10 text-destructive;
+  }
+
+  .sktpr-modal h4 {
+    @apply m-0 text-lg font-semibold leading-none tracking-tight text-foreground;
+  }
+
+  .sktpr-modal p {
+    @apply m-0 mt-2 text-sm leading-normal text-muted-foreground;
+  }
+
+  .sktpr-modal-actions {
+    @apply mt-6 flex justify-end gap-2.5;
+  }
+
+  .sktpr-toast-icon {
+    @apply mt-0.5 flex-shrink-0;
+  }
+
+  .sktpr-toast--success .sktpr-toast-icon {
+    @apply text-success;
+  }
+
+  .sktpr-toast--error .sktpr-toast-icon {
+    @apply text-destructive;
+  }
+
+  .sktpr-toast-body {
+    @apply min-w-0 flex-1;
+  }
+
+  .sktpr-toast-body strong {
+    @apply block text-sm font-semibold leading-none text-foreground;
+  }
+
+  .sktpr-toast-body p {
+    @apply m-0 mt-1.5 text-sm leading-normal text-muted-foreground;
+  }
+
+  .sktpr-toast > button {
+    @apply -mr-1 -mt-1 flex h-7 w-7 flex-shrink-0 cursor-pointer items-center justify-center rounded-md border-0 bg-transparent text-muted-foreground transition-colors duration-200 hover:bg-muted hover:text-foreground;
+  }
+
+  @media (max-width: 1000px) {
+    .sktpr-settings-layout {
+      @apply grid-cols-1;
+    }
+
+    .sktpr-settings-main {
+      @apply max-w-none;
+    }
+
+    .sktpr-settings-sidebar {
+      @apply border-b border-r-0;
+    }
+
+    .sktpr-settings-sidebar-nav {
+      @apply grid grid-cols-5 gap-1 space-y-0 p-2;
+    }
+
+    .sktpr-settings-sidebar-button {
+      @apply min-h-12 justify-center px-2 py-2 text-center;
+    }
+
+    .sktpr-settings-sidebar-button > div {
+      @apply flex-none;
+    }
+
+    .sktpr-settings-sidebar-description,
+    .sktpr-settings-sidebar-chevron {
+      @apply hidden;
+    }
+  }
+
+  @media (max-width: 782px) {
+    .sktpr-settings-app {
+      @apply mr-3 mt-3;
+    }
+
+    .sktpr-settings-header {
+      @apply px-4;
+    }
+
+    .sktpr-settings-header-inner,
+    .sktpr-settings-header-title,
+    .sktpr-settings-header-actions {
+      @apply flex-wrap;
+    }
+
+    .sktpr-settings-header-title,
+    .sktpr-settings-header-actions {
+      @apply w-full;
+    }
+
+    .sktpr-settings-header-actions {
+      @apply mt-3 grid grid-cols-2 gap-2;
+    }
+
+    .sktpr-settings-header-actions .sktpr-react-button {
+      @apply w-full justify-center;
+    }
+
+    .sktpr-settings-main {
+      @apply p-4;
+    }
+
+    .sktpr-grow,
+    .sktpr-gsubrow {
+      @apply flex-wrap gap-3;
+    }
+
+    .sktpr-grow-text,
+    .sktpr-grow-control {
+      @apply max-w-none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sktpr-settings-sidebar-nav {
+      @apply grid-cols-2;
+    }
+
+    .sktpr-settings-sidebar-button:last-child {
+      @apply col-span-2;
+    }
+
+    .sktpr-modal-actions {
+      @apply flex-col-reverse;
+    }
+
+    .sktpr-modal-actions .sktpr-react-button {
+      @apply w-full justify-center;
+    }
+  }
+}
+
+/* WordPress list-table screen for uploaded review media. */
+.reviquo_page_video-reviews-list {
+  --sktpr-list-muted: #646970;
+  --sktpr-list-line: #dcdcde;
+  --sktpr-list-thumb: 56px;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table {
+  border-color: var(--sktpr-list-line);
+}
+
+.reviquo_page_video-reviews-list .wp-list-table thead th,
+.reviquo_page_video-reviews-list .wp-list-table tfoot th {
+  padding: 10px 10px;
+  font-weight: 600;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table tbody td,
+.reviquo_page_video-reviews-list .wp-list-table tbody th {
+  padding: 14px 10px;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+/* Checkbox is aligned with the centre of the 40px avatar (cell padding 14px
+   + half the avatar - half the 16px checkbox), not the row's centre, because
+   the hover-only row actions change the row height. */
+.reviquo_page_video-reviews-list .wp-list-table tbody .check-column {
+  padding: 26px 0 14px 3px;
+  vertical-align: top;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table tbody .check-column input {
+  display: block;
+  margin: 0 0 0 8px;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table tbody tr:hover {
+  background: #f6f7f7;
+}
+
+/* Column widths. */
+.reviquo_page_video-reviews-list .wp-list-table .column-author {
+  width: 22%;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table .column-comment {
+  width: auto;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table .column-product {
+  width: 18%;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table .column-rating {
+  width: 120px;
+  white-space: nowrap;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table .column-media {
+  width: 220px;
+}
+
+.reviquo_page_video-reviews-list .wp-list-table .column-date {
+  width: 130px;
+  white-space: nowrap;
+}
+
+.reviquo_page_video-reviews-list .sktpr-empty {
+  color: #a7aaad;
+}
+
+/* Author. */
+.reviquo_page_video-reviews-list .sktpr-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author__avatar img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author__details {
+  min-width: 0;
+  flex: 1;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author__name {
+  display: block;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author__email {
+  display: block;
+  overflow: hidden;
+  color: var(--sktpr-list-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reviquo_page_video-reviews-list .sktpr-author .row-actions {
+  margin-top: 4px;
+  padding: 0;
+}
+
+/* Review text. */
+.reviquo_page_video-reviews-list .sktpr-comment {
+  max-width: 420px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-comment-text {
+  margin: 0;
+  color: #1d2327;
+  line-height: 1.55;
+}
+
+.reviquo_page_video-reviews-list .sktpr-post-state {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.reviquo_page_video-reviews-list .sktpr-post-state--pending {
+  background: #fcf9e8;
+  color: #8a6100;
+}
+
+.reviquo_page_video-reviews-list .sktpr-post-state--spam {
+  background: #fcf0f1;
+  color: #b32d2e;
+}
+
+.reviquo_page_video-reviews-list .sktpr-post-state--trash {
+  background: #f0f0f1;
+  color: var(--sktpr-list-muted);
+}
+
+/* Product. */
+.reviquo_page_video-reviews-list .sktpr-product__title {
+  display: block;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.reviquo_page_video-reviews-list .sktpr-product__view {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* Rating. */
+.reviquo_page_video-reviews-list .sktpr-star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.reviquo_page_video-reviews-list .sktpr-star-rating__stars {
+  display: inline-flex;
+  gap: 0;
+  line-height: 0;
+}
+
+.reviquo_page_video-reviews-list .sktpr-star-rating .dashicons {
+  width: 16px;
+  height: 16px;
+  color: #f0a500;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-star-rating .dashicons-star-empty {
+  color: #c3c4c7;
+}
+
+.reviquo_page_video-reviews-list .sktpr-rating-text {
+  color: var(--sktpr-list-muted);
+  font-size: 12px;
+}
+
+/* Media thumbnails (markup + lightbox shared with the storefront bundle). */
+.reviquo_page_video-reviews-list .sktpr-media {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-thumb {
+  width: var(--sktpr-list-thumb);
+  height: var(--sktpr-list-thumb);
+  border: 1px solid var(--sktpr-list-line);
+  border-radius: 6px;
+  background: #f0f0f1;
+  box-shadow: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-thumb:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-thumb:focus-visible {
+  outline: 2px solid #2271b1;
+  outline-offset: 1px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-thumb--video {
+  background: #1d2327;
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-play {
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+.reviquo_page_video-reviews-list .sktpr-review-media .sktpr-media-play::before {
+  border-width: 5px 0 5px 8px;
+}
+
+.reviquo_page_video-reviews-list .sktpr-media__count {
+  color: var(--sktpr-list-muted);
+  font-size: 12px;
+}
+
+/* Date. */
+.reviquo_page_video-reviews-list .sktpr-date__main {
+  display: block;
+  color: #1d2327;
+}
+
+.reviquo_page_video-reviews-list .sktpr-date__time {
+  display: block;
+  color: var(--sktpr-list-muted);
+  font-size: 12px;
+}
+
+/* Lightbox sits above the admin bar and menu. */
+.reviquo_page_video-reviews-list .sktpr-lightbox {
+  z-index: 1000000;
+}
+
+@media screen and (max-width: 1200px) {
+  .reviquo_page_video-reviews-list .wp-list-table .column-media {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .reviquo_page_video-reviews-list .wp-list-table tbody td,
+  .reviquo_page_video-reviews-list .wp-list-table tbody th {
+    padding: 10px;
+  }
+
+  .reviquo_page_video-reviews-list .sktpr-comment {
+    max-width: none;
+  }
+}
+
+  /* Email-reminders list table. */
+  .reviquo_page_skt-product-reviews-reminders .sktpr-reminders-empty {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .reviquo_page_skt-product-reviews-reminders .sktpr-reminder-status--default {
+    color: #69716c;
+  }
+
+  .reviquo_page_skt-product-reviews-reminders .sktpr-reminder-status--scheduled {
+    color: #ef4f31;
+  }
+
+  .reviquo_page_skt-product-reviews-reminders .sktpr-reminder-status--sent {
+    color: #2f7552;
+  }
+
+.reviquo_page_skt-product-reviews-reminders .sktpr-reminder-status--error {
+  color: #d63638;
+}

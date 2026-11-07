@@ -1,0 +1,51 @@
+*** ReviQuo Changelog ***
+
+2026-11-06 - version 3.3.0
+* Add - Media Gallery layout for saved review displays: media-first tiles for reviews with photos or videos that open in the lightbox.
+* Add - Testimonial layout: centered quote cards with the customer's avatar, name, and product below.
+* Add - Spotlight layout: the first review featured large beside a column of compact cards.
+* Add - Compact List layout: dense rows with a one-line meta row, a two-line excerpt, and small media thumbnails.
+* Add - Reels layout: vertical video tiles in a horizontally scrolling row, with muted preview playback on hover.
+* Add - Marquee layout: an endlessly scrolling strip of review cards that pauses on hover and stays still for reduced-motion visitors.
+* Add - Timeline layout: reviews alternating either side of a dated vertical line.
+* Add - Accordion layout: collapsible review rows that expand to the full review and media, one open at a time.
+* Add - Chat Bubbles layout: reviews as alternating speech bubbles beside each customer's avatar.
+
+2026-10-17 - version 3.2.1
+* Add - Slider layout for saved review displays, with responsive columns, optional autoplay, arrows, pagination dots, swipe and keyboard navigation, and automatic loading of more reviews.
+* Add - Slider previews in the shortcode builder, block editor, Elementor, and Divi 4/5 Visual Builders.
+* Tweak - Removed the redundant fullscreen button in the shortcode builder's live preview.
+* Fix - The Load More button never appeared for saved review displays with more reviews than one page.
+* Fix - Rating and media filters were hidden in saved review displays.
+
+2026-09-11 - version 3.1.0
+* Add - Deleting a review permanently now also deletes the media uploaded with it.
+* Tweak - Review uploads are limited to MP4, WebM, MKV, JPEG, PNG, GIF and WebP files within the site's upload size limit.
+* Tweak - Security hardening with a plugin-specific review form nonce and sanitized bulk-action input.
+* Tweak - Store admins are now notified about photo-only reviews awaiting approval, not just video reviews.
+* Tweak - Storefront messages, default button labels and the default reminder email are now translatable.
+* Fix - A required video, file or photo rule no longer blocks submission while its uploader is turned off.
+* Fix - Review media is now attached to the reviewed product in the Media Library.
+
+2026-08-22 - version 3.0.6
+* Add - Dedicated WooCommerce Marketplace build with all features enabled and no external updater, licensing SDK, advertising, telemetry, trials, or upgrade prompts.
+* Add - WooCommerce HPOS (High-Performance Order Storage) compatibility declaration.
+* Add - WooCommerce dependency notice with install and activation actions.
+* Tweak - Rewrote the legacy reminder migration on WooCommerce order APIs so it works on HPOS stores.
+* Tweak - Prevented ReviewFlow from initializing until WooCommerce is active.
+* Tweak - Set the default Start Recording and Record Video button text and hover colours to white.
+
+2026-08-21 - version 3.0.5
+* Add - Required photo-upload rules for review submissions.
+* Add - Multiple status-based review reminder rules with independent timing, subjects, and messages.
+* Add - Live email reminder preview with representative customer, order, store, and product data.
+* Add - Responsive masonry layout for review shortcodes.
+* Add - Native Gutenberg Product Reviews block with a persistent saved-shortcode dropdown and live editor preview.
+* Add - Block toolbar actions, shortcode conversion, copy controls, and direct links for managing saved review displays.
+* Add - Dedicated Elementor Product Reviews widget with a searchable saved-shortcode dropdown and live builder output.
+* Add - Native Divi 5 Product Reviews module with a saved-shortcode dropdown and live Visual Builder preview.
+* Add - Legacy Divi 4 Product Reviews module with the same saved-shortcode dropdown and Visual Builder preview.
+* Add - Public read-only REST API endpoints for approved reviews and saved review displays.
+* Tweak - Refreshed the dashboard, reminder editor, and storefront review displays with the updated brand palette.
+* Tweak - Loaded storefront assets for pages containing the Product Reviews block and matched its iframe preview to the frontend display.
+* Tweak - Renamed the plugin display name to ReviewFlow.
