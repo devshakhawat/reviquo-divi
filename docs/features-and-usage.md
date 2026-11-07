@@ -1,14 +1,14 @@
 # ReviQuo for WooCommerce — Features and Usage
 
-This guide documents the ReviQuo plugin as implemented in this repository. It covers store setup, customer review collection, moderation, storefront displays, reusable review displays, email reminders, privacy, the REST API, and developer-facing behavior.
+This guide documents the Divi Marketplace edition of ReviQuo as implemented in this repository. It covers store setup, customer review collection, moderation, storefront displays, reusable review displays, the Divi modules, email reminders, review rewards, privacy, the REST API, and developer-facing behavior.
 
-The plugin header identifies this codebase as version **3.1.0**. This document covers the features included in that release.
+The plugin header identifies this codebase as version **3.3.0**. This document covers the features included in that release.
 
 ## Contents
 
 1. [What the plugin does](#1-what-the-plugin-does)
 2. [Requirements and compatibility](#2-requirements-and-compatibility)
-3. [Free and Pro feature availability](#3-free-and-pro-feature-availability)
+3. [Feature availability](#3-feature-availability)
 4. [Installation and first-time setup](#4-installation-and-first-time-setup)
 5. [Admin navigation and permissions](#5-admin-navigation-and-permissions)
 6. [General settings](#6-review-settings-general)
@@ -64,39 +64,32 @@ Webcam recording additionally requires:
 
 The upload size is not configured by this plugin. The effective maximum is determined by PHP, the web server, WordPress, and any host-level media limits. For large video uploads, check `upload_max_filesize`, `post_max_size`, request timeouts, and the WordPress upload limit.
 
-## 3. Free and Pro feature availability
+## 3. Feature availability
 
-Feature access is checked on the server, not only hidden in the admin interface. An active paid license or active trial in the premium build enables Pro behavior.
+The Divi Marketplace edition includes every feature with no tiers, license key, trial, or upgrade prompts:
 
-| Feature | Free | Pro |
-| --- | --- | --- |
-| Webcam recording | Yes | Yes |
-| Maximum recording duration | 1–2 minutes | 1–10 minutes |
-| Existing video upload | Yes | Yes |
-| Up to five photos | Yes | Yes |
-| Required-media rules | Yes | Yes |
-| Consent checkbox | Yes | Yes |
-| Media moderation | Yes | Yes |
-| Product-page rating summary and filters | Yes | Yes |
-| Saved review display: list, grid, masonry, slider, media gallery, testimonial, spotlight, compact list, reels, marquee, timeline, accordion, and chat bubbles layouts | Yes | Yes |
-| Verified-customer badges | No | Yes |
-| Review-media structured-data enrichment | No | Yes |
-| Reminder rules | One | Unlimited |
-| Review reward coupons | No | Yes |
-| Shortcode, Gutenberg block, Divi 4/5 modules, and REST API | Yes | Yes |
+- Webcam recording up to 10 minutes, existing video upload, and up to five photos per review.
+- Required-media rules, consent checkbox, and media moderation.
+- Product-page rating summary, review filters, verified-customer badges, and media lightbox.
+- Review-media structured-data enrichment (rich snippets).
+- Saved review displays in thirteen layouts: list, grid, masonry, slider, media gallery, testimonial, spotlight, compact list, reels, marquee, timeline, accordion, and chat bubbles.
+- Native Divi 4 and Divi 5 modules, Gutenberg block, shortcode, and read-only REST API.
+- Unlimited email reminder rules.
+- Review reward coupons.
 
-When a Pro license becomes inactive, stored Pro values are retained where possible but are not executed. For example, verified badges are disabled and recordings are capped at two minutes. Reactivating the license restores the stored settings. Free users cannot overwrite locked Pro values while editing unrelated settings.
+The plugin contains no separate license manager, external updater, advertising, or telemetry. Updates are delivered through the Divi Marketplace update system.
 
 ## 4. Installation and first-time setup
 
-1. Install and activate WooCommerce.
-2. Install this plugin through **Plugins > Add New**, or upload the `product-reviews` directory to `wp-content/plugins/`.
+1. Install and activate WooCommerce, and Divi (theme or Divi Builder plugin) if you want the Divi modules.
+2. Upload `reviquo.zip` under **Plugins > Add New > Upload Plugin**.
 3. Activate **ReviQuo**.
 4. In **WooCommerce > Settings > Products**, make sure product reviews and ratings are configured as required by the store.
 5. Open **ReviQuo > Review Settings**.
-6. Configure the General, Storefront, Appearance, Recording Modal, and Email reminders tabs.
+6. Configure the General, Storefront, Appearance, Recording Modal, Email reminders, and Review rewards tabs.
 7. Open a public product page in a private browser window and submit a test review.
-8. Verify the uploaded media, moderation status, public display, email delivery, and mobile layout before inviting customers to use the feature.
+8. Optionally create a saved display under **ReviQuo > Review Shortcode** and add the **Product Reviews** module in the Divi Visual Builder.
+9. Verify the uploaded media, moderation status, public display, email delivery, and mobile layout before inviting customers to use the feature.
 
 Activation creates or updates the email-reminder database table and schedules migration of older reminder data when needed.
 
@@ -129,7 +122,7 @@ Requires a browser-recorded video. The plugin validates this in JavaScript for i
 
 **Maximum recording length**
 
-Sets an automatic stop time. Free installations can choose one or two minutes. Pro installations can choose one through ten minutes. The timer is displayed in the modal while recording.
+Sets an automatic stop time from one to ten minutes. The timer is displayed in the modal while recording.
 
 **Video file upload**
 
@@ -177,7 +170,7 @@ Displays **All**, one-to-five-star, and **With photos / videos** controls above 
 
 Filtering on the native product review list happens in the browser against the reviews currently rendered by WooCommerce. It does not fetch additional WooCommerce comment pages.
 
-**Rich snippets** — Pro
+**Rich snippets**
 
 Extends WooCommerce's existing product/review JSON-LD with uploaded media. It does not emit a duplicate Product schema block.
 
@@ -188,7 +181,7 @@ Extends WooCommerce's existing product/review JSON-LD with uploaded media. It do
 
 This feature supplies structured data but cannot guarantee that a search engine will show a rich result.
 
-**Verified badge** — Pro
+**Verified badge**
 
 Displays a styled **Verified Customer** badge beside the review author and date when WooCommerce confirms that the reviewer owns the product. It uses WooCommerce's `wc_review_is_from_verified_owner()` result. The plugin hides WooCommerce's plain “verified owner” label when the styled badge is enabled.
 
@@ -232,7 +225,7 @@ Each of the three button panels has a live preview and controls for:
 
 Available icon choices include video camera, camera, microphone, play, star, comment, pencil, video file, picture, upload, stop, add, and none.
 
-The verified badge panel controls badge font size from 10 to 24 px, background color, and text/icon color. The display switch itself is under the Storefront tab and is Pro-only.
+The verified badge panel controls badge font size from 10 to 24 px, background color, and text/icon color. The display switch itself is under the Storefront tab.
 
 ## 9. Review Settings: Recording Modal
 
@@ -354,8 +347,6 @@ Trashing a display makes its shortcode, block, and Divi modules render no output
 - Accordion. Collapsed rows showing the avatar, name, verified mark, stars, date, a media count, and a one-line excerpt; opening a row reveals the product, full review, and media. One row is open at a time per display, and closing a row pauses its video. Built on native `<details>` elements, so it is keyboard accessible and works without JavaScript (rows then open independently). Column settings don't apply.
 - Chat Bubbles. Each review is a speech bubble beside the customer's avatar, alternating sides like a conversation; right-hand bubbles take an accent tint. The bubble holds the name, verified mark, stars, review, media, and a product/date footer. Works with Load More and the filters. Column settings don't apply.
 
-All thirteen layouts are available in the free version.
-
 **Slider options** (shown when Layout is Slider):
 
 - Autoplay, with a delay of 1–20 seconds (default 5). Autoplay pauses while the pointer is over the slider and is disabled for visitors who prefer reduced motion.
@@ -370,7 +361,7 @@ Visitors can also swipe or use the keyboard arrow keys. Arrows and dots move one
 - Review Filters.
 - Product Name.
 - Customer Avatar.
-- Verified Badge — Pro.
+- Verified Badge.
 - Photos & Videos.
 
 **Responsive design controls** include:
@@ -422,12 +413,15 @@ When the block is placed while editing a product, the editor passes that product
 
 ### Divi 5 usage
 
-1. Create a saved review display.
-2. Open a page or product in the Divi 5 Visual Builder.
-3. Add the **Product Reviews** module.
-4. Open **Content > Review Display** and choose a **Shortcode setting**.
+1. Open a page or product in the Divi 5 Visual Builder.
+2. Add the **Product Reviews** module.
+3. Choose a **Settings Source**:
+   - **Saved shortcode setting** — select a display created under **ReviQuo > Review Shortcode**. Edits to that display update every module that uses it.
+   - **Customize in this module** — configure the layout, order, review source, columns, visibility toggles, and colors directly on the module, with no saved display needed.
 
-The module stores only the saved display ID and loads an authenticated, server-rendered preview in the Visual Builder. On the frontend it delegates to the same shortcode renderer, so responsive layouts, filters, the media lightbox, and Load More behavior remain consistent with the other integrations. A Current product display receives product context when the module is used on a WooCommerce product; it has no product context on an ordinary page.
+In both modes, the module's Design tab adds Divi's own styling on top: fonts for the author, review text, product, date, average rating, filters, and Load More button; star colour and size; card padding, border, and box shadow; and Custom CSS for the review card, rating summary, filter buttons, star rating, avatar, and Load More button.
+
+In saved mode, the module stores only the saved display ID. Either way, it loads an authenticated, server-rendered preview in the Visual Builder. On the frontend it delegates to the same shortcode renderer, so responsive layouts, filters, the media lightbox, and Load More behavior remain consistent with the other integrations. A Current product display receives product context when the module is used on a WooCommerce product; it has no product context on an ordinary page.
 
 The integration registers only when Divi 5 APIs are available and does not make Divi a plugin dependency. If the saved display is trashed, the Visual Builder reports that it is unavailable and the frontend renders no module output.
 
@@ -435,10 +429,11 @@ The integration registers only when Divi 5 APIs are available and does not make 
 
 Sites running the legacy Divi 4 builder get an equivalent **Product Reviews** module:
 
-1. Create a saved review display.
-2. Open a page or product in the Divi Builder.
-3. Add the **Product Reviews** module.
-4. Choose a **Shortcode setting** in the module's Content tab.
+1. Open a page or product in the Divi Builder.
+2. Add the **Product Reviews** module.
+3. In the module's Content tab, choose a **Settings Source**: pick a saved **Shortcode setting**, or select **Customize in this module** and configure the display on the module itself.
+
+The same Design-tab options described for Divi 5 (fonts, star styling, card padding, border, box shadow, and Custom CSS) are available.
 
 The Divi 4 module registers on `et_builder_ready`, stores the saved display ID in the `[sktpr_divi4_reviews]` module shortcode, and uses the same authenticated Visual Builder preview endpoint and frontend shortcode renderer as the Divi 5 module. When the Divi 5 builder is enabled, only the Divi 5 module loads in the Visual Builder; the Divi 5 module declares `sktpr_divi4_reviews` as its Divi 4 counterpart so existing Divi 4 layouts are recognized (reselect the display after migrating a page to Divi 5 if the selection does not carry over).
 
@@ -465,7 +460,7 @@ Each rule has:
 - Required HTML-capable content.
 - An HTML/Preview view using representative sample data.
 
-Free supports one rule. Pro supports multiple rules. Each rule sends at most once per order because the database enforces a unique order-and-rule combination. Moving an order out of and back into the same trigger status does not create another reminder for that rule.
+You can add as many rules as you need. Each rule sends at most once per order because the database enforces a unique order-and-rule combination. Moving an order out of and back into the same trigger status does not create another reminder for that rule.
 
 Deleting a rule does not cancel reminders already scheduled from it. A queued reminder stores a snapshot of the sender, subject, and content, so later edits or rule deletion do not alter that queued email. To cancel queued items, use **ReviQuo > Email Reminders**, disable the master reminder switch, or cancel/refund the order.
 
@@ -482,7 +477,7 @@ The subject supports `{customer_name}`, `{order_number}`, `{order_date}`, `{site
 | `{site_url}` | Site home URL. |
 | `{products_list}` | HTML cards for reviewable products, each with image, name, and Write Review link. |
 | `{unsubscribe_link}` | Tokenized unsubscribe URL. |
-| `{review_reward}` | Best available review reward, e.g. `up to 15%`, resolved at send time. Empty unless Review rewards are enabled and licensed. |
+| `{review_reward}` | Best available review reward, e.g. `up to 15%`, resolved at send time. Empty unless Review rewards are enabled. |
 
 If `{unsubscribe_link}` is absent from the message, the plugin automatically appends an unsubscribe footer. `{products_list}` is replaced in the message body during delivery; include it where the product review buttons should appear.
 
@@ -512,9 +507,9 @@ Open **ReviQuo > Email Reminders** to see up to the first 100 records ordered by
 
 Statuses are Scheduled, Overdue, Sent, Cancelled, and Failed. Scheduled rows can be cancelled individually. The order link opens the WooCommerce order, and sent rows show their sent time.
 
-### Review reward coupons (Pro)
+### Review reward coupons
 
-Open **Review Settings > Review rewards** to thank reviewers with a single-use WooCommerce coupon. The coupon is created and emailed when a review is **approved**, not when it is submitted, so pending or spam reviews never earn one. Reviews approved on submission are rewarded immediately.
+Open **ReviQuo > Review Settings > Review rewards** to thank reviewers with a single-use WooCommerce coupon. The coupon is created and emailed when a review is **approved**, not when it is submitted, so pending or spam reviews never earn one. Reviews approved on submission are rewarded immediately.
 
 - **Reward tiers.** Text, photo, and video reviews each have their own switch, discount type (percent or fixed cart), and amount. A review gets the most valuable enabled tier it qualifies for, judged by the media actually saved with it.
 - **Coupon rules.** Code prefix (a random suffix is added), expiry in days (0 = never), minimum spend, individual use, and exclude sale items. Every coupon has a usage limit of 1 and is restricted to the reviewer's email address.
@@ -602,7 +597,7 @@ The summary includes `total`, `rated`, two-decimal `average`, counts keyed 1 thr
 
 `/review-displays` accepts `page` and `per_page` (default 20, maximum 100) and returns display objects plus pagination fields and headers.
 
-A display object includes its ID, name, GMT modification date, effective license-aware settings, and links to itself and its reviews.
+A display object includes its ID, name, GMT modification date, effective public settings, and links to itself and its reviews.
 
 `/review-displays/{id}/reviews` accepts `page`, `rating`, `media`, and `context_product_id`. The saved display supplies `order` and `per_page`; clients cannot override them on this endpoint.
 
@@ -728,11 +723,11 @@ Current package scripts are:
 npm install
 npm run dev
 npm run watch
-npm run production
-npm run zip
+npm run build:assets
+npm run build
 ```
 
-`npm run dev` builds admin, public, block, Divi 4, and Divi 5 development assets. `npm run watch` currently watches the admin target. `npm run production` builds all five targets. `npm run zip` runs the production build and writes `build/product-reviews.zip` after applying distribution exclusions.
+`npm run dev` builds admin, public, block, Divi 4, and Divi 5 development assets. `npm run watch` currently watches the admin target. `npm run build:assets` (alias `npm run production`) builds all five targets plus the admin-notices CSS. `npm run build` compiles assets, validates the marketplace feature policy, rewrites the text domain to `reviquo`, and writes `build/divi/reviquo.zip` after applying distribution exclusions. See `docs/marketplace-build.md`.
 
 There is no configured automated PHP or JavaScript test suite. Validate changes with WooCommerce active on a local WordPress site.
 
@@ -770,7 +765,6 @@ There is no configured automated PHP or JavaScript test suite. Validate changes 
 
 ### The verified badge does not appear
 
-- An active Pro license or trial is required.
 - Enable Verified badge under Storefront.
 - Confirm WooCommerce can match the review email/customer to an order for that product.
 - The badge is intentionally hidden for pending reviews.
@@ -795,10 +789,6 @@ Current product needs a WooCommerce product context. Use Selected products or Al
 - Verify WordPress Cron with a cron inspection tool or WP-CLI.
 - Configure SMTP/transactional email and inspect its delivery logs.
 - Remember that a given rule is recorded only once per order, even after failure or cancellation.
-
-### Settings appear to change after a license expires
-
-The stored Pro choices are normally retained but effective runtime settings are license-limited. Verified badges and rich-snippet media are disabled, duration is capped at two minutes, and only the first reminder rule runs. Reactivating an eligible license restores the retained settings.
 
 ## 20. Recommended launch checklist
 
