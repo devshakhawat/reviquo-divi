@@ -61,7 +61,10 @@ add_action(
 );
 
 // sktpr:edition-seam:start
-require_once SKTPR_PLUGIN_DIR . 'includes/licensing.php';
+/**
+ * Divi Marketplace edition: every feature ships unlocked, no licensing SDK.
+ */
+define( 'SKTPR_MARKETPLACE_BUILD', true );
 // sktpr:edition-seam:end
 
 /**

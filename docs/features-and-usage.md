@@ -41,7 +41,7 @@ The plugin adds:
 - An optional required consent checkbox with editable text.
 - A dedicated media-review moderation screen.
 - An average-rating summary, rating filters, media filters, verified-customer badges, and a media lightbox.
-- Reusable review displays that can be inserted with a shortcode, Gutenberg block, Elementor widget, or Divi module (Divi 4 and Divi 5).
+- Reusable review displays that can be inserted with a shortcode, Gutenberg block, or Divi module (Divi 4 and Divi 5).
 - Status-based review-reminder emails with delayed delivery and unsubscribe handling.
 - Media enrichment for WooCommerce product/review structured data.
 - A public, read-only REST API for headless storefronts.
@@ -83,7 +83,7 @@ Feature access is checked on the server, not only hidden in the admin interface.
 | Review-media structured-data enrichment | No | Yes |
 | Reminder rules | One | Unlimited |
 | Review reward coupons | No | Yes |
-| Shortcode, Gutenberg block, Elementor widget, Divi 4/5 modules, and REST API | Yes | Yes |
+| Shortcode, Gutenberg block, Divi 4/5 modules, and REST API | Yes | Yes |
 
 When a Pro license becomes inactive, stored Pro values are retained where possible but are not executed. For example, verified badges are disabled and recordings are capped at two minutes. Reactivating the license restores the stored settings. Free users cannot overwrite locked Pro values while editing unrelated settings.
 
@@ -332,7 +332,7 @@ The list screen supports:
 - Edit, duplicate, or trash one display.
 - Select and trash multiple displays.
 
-Trashing a display makes its shortcode, block, Elementor widget, and Divi modules render no output. It does not delete any customer reviews.
+Trashing a display makes its shortcode, block, and Divi modules render no output. It does not delete any customer reviews.
 
 ### Display configuration
 
@@ -419,15 +419,6 @@ Long result sets use an AJAX **Load More** button (the slider layout loads more 
 The block is dynamic and stores only the saved display ID. It supports wide/full alignment and anchors. Its inspector shows the selected source and layout and provides the equivalent shortcode. If the display is deleted, the editor prompts for another selection and the frontend renders nothing.
 
 When the block is placed while editing a product, the editor passes that product as preview context for Current product displays.
-
-### Elementor usage
-
-1. Create a saved review display.
-2. Open Elementor and find the **Product Reviews** category.
-3. Drag the **Product Reviews** widget into the layout.
-4. Choose a display in **Shortcode setting**.
-
-The widget uses the same server renderer, responsive layout, filters, lightbox, and Load More behavior as the shortcode. Elementor reloads its preview after selection changes. Plain-content exports contain the equivalent `[reviquo]` shortcode.
 
 ### Divi 5 usage
 
@@ -642,7 +633,6 @@ The site remains responsible for its desired REST API cache headers, CORS policy
 | Saved displays | Private `sktpr_review_sc` posts with `_sktpr_shortcode_settings` metadata. |
 | Reminder history | `{prefix}sktpr_email_reminders` custom table. |
 | Reminder opt-outs | HMAC hashes in `sktpr_email_optouts`. |
-| License/account state | Freemius SDK storage managed by the bundled integration. |
 
 The reminder table stores order ID, rule ID, trigger status, customer name, customer email, a sender/template snapshot, scheduled time, status, created/updated times, and sent time. Its unique `(order_id, rule_id)` key enforces once-per-rule-per-order behavior.
 
@@ -674,7 +664,6 @@ Before permanently removing the plugin, export any required records and define a
 - Main version constant: `SKTPR_VERSION`.
 - Shortcode: `reviquo`.
 - Block: `sktpr/reviews`.
-- Elementor widget name: `sktpr-product-reviews`.
 - Divi 5 module: `sktpr/divi5-reviews`.
 - Divi 4 module shortcode: `sktpr_divi4_reviews`.
 - Saved display post type: `sktpr_review_sc`.
@@ -706,11 +695,6 @@ add_action( 'sktpr_review_reward_before_coupon_save', function ( $coupon, $comme
 
 // Runs after a reward coupon has been issued.
 add_action( 'sktpr_review_reward_issued', function ( $coupon_id, $comment, $tier ) {}, 10, 3 );
-
-// Runs after the Freemius integration is initialized.
-add_action( 'pr_fs_loaded', function () {
-	// License-dependent integration code.
-} );
 ```
 
 The plugin also integrates with WooCommerce's review form, review list, review metadata, comment classes, order-status changes, and structured-data filters. Treat internal class methods and AJAX actions as implementation details unless a stable API is documented in a future release.

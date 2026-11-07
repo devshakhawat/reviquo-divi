@@ -140,12 +140,8 @@ forbid "a compiled bundle links to WordPress.org or references Freemius." \
 	--include='*.js' --include='*.css' \
 	"wordpress\.org|freemius"
 
-if [ -e "${pkg_dir}/freemius" ] || [ -e "${pkg_dir}/marketplace" ] || [ -e "${pkg_dir}/woo-marketplace" ]; then
+if [ -e "${pkg_dir}/freemius" ] || [ -e "${pkg_dir}/marketplace" ]; then
 	fail "a directory that must not ship is present in the package."
-fi
-
-if [ -e "${pkg_dir}/includes/licensing.php" ]; then
-	fail "the Freemius licensing bootstrap is present in the package."
 fi
 
 # The header version, the SKTPR_VERSION constant and the readme stable tag must agree.

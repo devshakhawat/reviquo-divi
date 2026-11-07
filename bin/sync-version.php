@@ -96,9 +96,7 @@ $targets = array(
 		'/^(\s*\*\s*Version:\s*)[0-9.]+\s*$/m',
 		"/(define\( 'SKTPR_VERSION', ')[0-9.]+(?=' \))/",
 	),
-	'readme.txt'                 => array( '/^(Stable tag:\s*)[0-9.]+\s*$/m' ),
 	'marketplace/readme.txt'     => array( '/^(Stable tag:\s*)[0-9.]+\s*$/m' ),
-	'woo-marketplace/readme.txt' => array( '/^(Stable tag:\s*)[0-9.]+\s*$/m' ),
 	'package.json'               => array( '/("version":\s*")[0-9.]+(?=")/' ),
 );
 
@@ -167,7 +165,7 @@ if ( $written ) {
  * deliberate one, so say so - but do not fail, because the entry is normally
  * written after the version is set.
  */
-foreach ( array( 'readme.txt', 'marketplace/readme.txt', 'woo-marketplace/readme.txt' ) as $readme ) {
+foreach ( array( 'marketplace/readme.txt' ) as $readme ) {
 	$contents = sktpr_version_read( $root . '/' . $readme );
 
 	if ( ! preg_match( '/^=\s*' . preg_quote( $version, '/' ) . '\s/m', $contents ) ) {
@@ -175,10 +173,3 @@ foreach ( array( 'readme.txt', 'marketplace/readme.txt', 'woo-marketplace/readme
 	}
 }
 
-// The Marketplace changelog uses WooCommerce's "YYYY-MM-DD - version X.Y.Z" heading format.
-$woo_changelog = 'woo-marketplace/changelog.txt';
-$contents      = sktpr_version_read( $root . '/' . $woo_changelog );
-
-if ( ! preg_match( '/^\d{4}-\d{2}-\d{2} - version ' . preg_quote( $version, '/' ) . '\s*$/m', $contents ) ) {
-	fwrite( STDERR, "sync-version: warning - {$woo_changelog} has no '- version {$version}' changelog entry.\n" );
-}

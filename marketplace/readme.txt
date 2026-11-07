@@ -19,7 +19,7 @@ The Elegant Themes Marketplace edition includes every feature. It contains no se
 * WordPress 6.8 or later
 * PHP 7.4 or later
 * WooCommerce
-* Divi Theme or Divi Builder for the Divi modules; shortcode, block, and Elementor integrations remain available outside Divi
+* Divi Theme or Divi Builder for the Divi modules; shortcode and block integrations remain available outside Divi
 * HTTPS for in-browser camera and microphone recording
 
 == Installation ==

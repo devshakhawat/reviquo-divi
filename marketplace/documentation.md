@@ -46,7 +46,7 @@ The plugin adds:
 - An optional required consent checkbox with editable text.
 - A dedicated media-review moderation screen.
 - An average-rating summary, rating filters, media filters, verified-customer badges and a media lightbox.
-- Reusable review displays that can be inserted with a shortcode, Gutenberg block, Elementor widget or Divi module (Divi 4 and Divi 5).
+- Reusable review displays that can be inserted with a shortcode, Gutenberg block or Divi module (Divi 4 and Divi 5).
 - Status-based review-reminder emails with delayed delivery and unsubscribe handling.
 - Media enrichment for WooCommerce product/review structured data.
 - A public, read-only REST API for headless storefronts.
@@ -58,8 +58,8 @@ The plugin adds:
 - PHP 7.4 or later.
 - WooCommerce installed and active.
 - Product reviews enabled in **WooCommerce > Settings > Products**.
-- Divi Theme or Divi Builder for the Divi 4 and Divi 5 modules. The shortcode, Gutenberg
-  block and Elementor widget work without Divi, so the plugin is usable on a non-Divi site.
+- Divi Theme or Divi Builder for the Divi 4 and Divi 5 modules. The shortcode and Gutenberg
+  block work without Divi, so the plugin is usable on a non-Divi site.
 
 The plugin declares WooCommerce HPOS (High-Performance Order Storage) compatibility.
 
@@ -87,7 +87,7 @@ license step, no trial and no unlock:
 - Verified-customer badges.
 - Review-media structured-data (rich snippet) enrichment.
 - **Unlimited** email reminder rules.
-- Shortcode, Gutenberg block, Elementor widget, Divi 4 module, Divi 5 module and REST API.
+- Shortcode, Gutenberg block, Divi 4 module, Divi 5 module and REST API.
 
 This edition contains no license manager, no external updater, no advertising, no telemetry,
 no trials and no upgrade prompts, and it makes no outbound HTTP requests of its own.
@@ -404,7 +404,7 @@ The list screen supports:
 - Edit, duplicate or trash one display.
 - Select and trash multiple displays.
 
-Trashing a display makes its shortcode, block, Elementor widget and Divi modules render no
+Trashing a display makes its shortcode, block and Divi modules render no
 output. It does not delete any customer reviews.
 
 ### Display configuration
@@ -492,17 +492,6 @@ frontend renders nothing.
 
 When the block is placed while editing a product, the editor passes that product as preview
 context for Current product displays.
-
-### Elementor usage
-
-1. Create a saved review display.
-2. Open Elementor and find the **Product Reviews** category.
-3. Drag the **Product Reviews** widget into the layout.
-4. Choose a display in **Shortcode setting**.
-
-The widget uses the same server renderer, responsive layout, filters, lightbox and Load More
-behavior as the shortcode. Elementor reloads its preview after selection changes. Plain-content
-exports contain the equivalent `[reviquo]` shortcode.
 
 ## 15. Divi 4 and Divi 5 modules
 
@@ -794,7 +783,6 @@ permanent removal is intended and backups exist.
 - Marketplace build constant: `SKTPR_MARKETPLACE_BUILD`.
 - Shortcode: `reviquo`.
 - Block: `sktpr/reviews`.
-- Elementor widget name: `sktpr-product-reviews`.
 - Divi 5 module: `sktpr/divi5-reviews`.
 - Divi 4 module shortcode: `sktpr_divi4_reviews`.
 - Saved display post type: `sktpr_review_sc`.

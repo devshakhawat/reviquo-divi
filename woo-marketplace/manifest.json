@@ -1,8 +1,0 @@
-{
-	"_comment": "Header fields the WooCommerce Marketplace edition overrides. Everything else in product-reviews.php is generated from the source bootstrap by bin/make-marketplace-bootstrap.php, so the editions cannot drift apart.",
-	"header": {
-		"Plugin Name": "ReviQuo",
-		"Description": "Let customers add webcam recordings, video files and photos to WooCommerce product reviews, with a rating summary, review filters, verified-buyer badges, rich snippets and automated review-reminder emails.",
-		"Requires Plugins": "woocommerce"
-	}
-}

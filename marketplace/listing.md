@@ -29,7 +29,7 @@ Text reviews all look the same. A customer holding your product on camera does n
 * **List, grid, masonry and slider layouts** — with independent desktop, tablet and mobile column counts, gap and corner radius. The slider adds optional autoplay, arrows, dots and swipe navigation.
 * **Styling that matches your theme** — background, text, accent and star colours, plus toggles for the rating summary, filters, product name, avatars, review text, verified badge, photos and videos.
 * **Pull from anywhere** — the current product, a hand-picked set of products or your whole catalogue, ordered by newest, oldest, highest or lowest rating.
-* **Beyond Divi** — the same displays work through a Gutenberg block, an Elementor widget and a plain shortcode, so a theme change never strands your content.
+* **Beyond Divi** — the same displays work through a Gutenberg block and a plain shortcode, so a theme change never strands your content.
 
 ### Convert more of the traffic you already have
 

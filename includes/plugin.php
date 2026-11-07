@@ -52,7 +52,6 @@ class Plugin {
 	public $review_shortcodes; // phpcs:ignore
 	public $review_block; // phpcs:ignore
 	public $headless_api; // phpcs:ignore
-	public $elementor; // phpcs:ignore
 
 	/**
 	 * Constructor for the class.
@@ -76,7 +75,6 @@ class Plugin {
 		$this->review_shortcodes  = new Review_Shortcodes();
 		$this->review_block       = new Review_Block();
 		$this->headless_api       = new Headless_API();
-		$this->elementor          = new Elementor_Integration();
 		$this->rating_summary     = new Rating_Summary();
 		$this->review_filters     = new Review_Filters();
 		if ( Features::has_pro_license() ) {

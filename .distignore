@@ -1,9 +1,7 @@
-# Files and directories excluded from EVERY package (WordPress.org, Divi
-# Marketplace and WooCommerce Marketplace). Used by build.sh, the two marketplace
-# build scripts and 10up/action-wordpress-plugin-deploy (.github/workflows/deploy.yml).
-# Edition-only exclusions live in .marketplace-distignore and .woo-marketplace-distignore.
+# Files and directories excluded from the Divi Marketplace package.
+# Used by build-marketplace.sh together with .marketplace-distignore.
 
-# Release credentials (bin/release.sh) - must never ship
+# Credentials - must never ship
 .env
 .env.*
 
@@ -13,17 +11,12 @@
 .gitattributes
 .github
 .distignore
-.wordpress-org
 
-# Edition sources and build scripts (they never ship in any package)
+# Edition sources and build scripts (they never ship)
 marketplace
 marketplace-assets
 .marketplace-distignore
 build-marketplace.sh
-woo-marketplace
-.woo-marketplace-distignore
-build-woo-marketplace.sh
-qit.json
 
 # Source (compiled output in assets/ is what ships)
 dev
@@ -46,7 +39,6 @@ phpcs.xml.dist
 CLAUDE.md
 AGENTS.md
 QWEN.md
-build.sh
 .claude
 .agents
 .codex

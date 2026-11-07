@@ -30,8 +30,6 @@ return array(
 	'Review_Shortcodes'        => 'includes/review-shortcodes.php',
 	'Review_Block'             => 'includes/review-block.php',
 	'Headless_API'             => 'includes/headless-api.php',
-	'Elementor_Integration'    => 'includes/elementor-integration.php',
-	'Elementor_Reviews_Widget' => 'includes/elementor-reviews-widget.php',
 	'Divi5_Integration'        => 'includes/divi5-integration.php',
 	'Divi4_Integration'        => 'includes/divi4-integration.php',
 );

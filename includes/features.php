@@ -4,198 +4,109 @@ namespace SKTPREVIEW;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Central Free/Pro feature and license policy.
+ * Feature policy for the full Elegant Themes Marketplace edition.
  */
 final class Features {
 
-	/** Maximum supported webcam recording length. */
 	const MAX_VIDEO_DURATION = 10;
-
-	/** Maximum webcam recording length available without Pro. */
 	const FREE_VIDEO_DURATION = 2;
-
-	/** Maximum reminder rules available without Pro. */
 	const FREE_REMINDER_RULES = 1;
 
 	/**
-	 * Whether this installation can execute Pro features.
-	 *
-	 * Freemius returns true for an active paid license or active trial while
-	 * running the premium build.
+	 * Marketplace customers receive every local plugin feature.
 	 *
 	 * @return bool
 	 */
 	public static function has_pro_license() {
-		if ( defined( 'SKTPR_MARKETPLACE_BUILD' ) && SKTPR_MARKETPLACE_BUILD ) {
-			return true;
-		}
-
-		return function_exists( 'pr_fs' ) && pr_fs()->is_premium() && pr_fs()->can_use_premium_code();
+		return true;
 	}
 
 	/**
-	 * Settings which must retain their stored values while a license is inactive.
+	 * Compatibility method shared with the WordPress.org edition.
 	 *
 	 * @return string[]
 	 */
 	public static function get_pro_setting_keys() {
-		return array(
-			'enable_rich_snippets',
-			'show_verified_badge',
-		);
+		return array();
 	}
 
 	/**
-	 * Return settings as they are allowed to execute for the current license.
-	 * Stored Pro values are not destroyed when a license expires.
+	 * Normalize local feature settings for the full marketplace edition.
 	 *
-	 * @param array $settings Stored settings.
+	 * @param array $settings Saved settings.
 	 * @param array $defaults Default settings.
 	 * @return array
 	 */
-	public static function apply_settings( $settings, $defaults ) {
-		$max_duration               = self::has_pro_license() ? self::MAX_VIDEO_DURATION : self::FREE_VIDEO_DURATION;
-		$settings['video_duration'] = min( $max_duration, max( 1, absint( $settings['video_duration'] ?? self::FREE_VIDEO_DURATION ) ) );
-
-		if ( self::has_pro_license() ) {
-			return $settings;
-		}
-
-		foreach ( self::get_pro_setting_keys() as $key ) {
-			if ( array_key_exists( $key, $defaults ) ) {
-				$settings[ $key ] = $defaults[ $key ];
-			}
-		}
-
-		$settings['enable_rich_snippets'] = false;
-		$settings['show_verified_badge']  = false;
-
+	public static function apply_settings( $settings, $defaults ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+		$settings['video_duration'] = min( self::MAX_VIDEO_DURATION, max( 1, absint( $settings['video_duration'] ?? self::MAX_VIDEO_DURATION ) ) );
 		return $settings;
 	}
 
 	/**
-	 * Prevent a Free-plan AJAX request from overwriting stored Pro settings.
+	 * Preserve all submitted settings because no marketplace feature is locked.
 	 *
 	 * @param array $submitted Submitted settings.
-	 * @param array $stored Existing stored settings.
+	 * @param array $stored Stored settings.
 	 * @return array
 	 */
-	public static function preserve_locked_settings( $submitted, $stored ) {
-		if ( self::has_pro_license() ) {
-			return $submitted;
-		}
-
-		foreach ( self::get_pro_setting_keys() as $key ) {
-			if ( array_key_exists( $key, $stored ) ) {
-				$submitted[ $key ] = $stored[ $key ];
-			}
-		}
-
-		$stored_duration = absint( $stored['video_duration'] ?? self::FREE_VIDEO_DURATION );
-		if ( $stored_duration > self::FREE_VIDEO_DURATION ) {
-			$submitted['video_duration'] = min( self::MAX_VIDEO_DURATION, $stored_duration );
-		} else {
-			$submitted['video_duration'] = min( self::FREE_VIDEO_DURATION, max( 1, absint( $submitted['video_duration'] ?? self::FREE_VIDEO_DURATION ) ) );
-		}
-
+	public static function preserve_locked_settings( $submitted, $stored ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		return $submitted;
 	}
 
 	/**
-	 * Return email settings as allowed by the current license.
+	 * Return all reminder settings unchanged.
 	 *
-	 * @param array $settings Stored email settings.
+	 * @param array $settings Reminder settings.
 	 * @return array
 	 */
 	public static function apply_email_settings( $settings ) {
-		if ( ! self::has_pro_license() && isset( $settings['rules'] ) && is_array( $settings['rules'] ) ) {
-			$settings['rules'] = array_slice( $settings['rules'], 0, self::FREE_REMINDER_RULES );
-		}
-
 		return $settings;
 	}
 
 	/**
-	 * Preserve hidden Pro reminder rules while a Free user edits their first rule.
+	 * Preserve every submitted reminder rule.
 	 *
-	 * @param array $submitted License-limited submitted settings.
-	 * @param array $stored Existing stored settings.
+	 * @param array $submitted Submitted reminder settings.
+	 * @param array $stored Stored reminder settings.
 	 * @return array
 	 */
-	public static function preserve_locked_email_rules( $submitted, $stored ) {
-		if ( self::has_pro_license() || empty( $submitted['rules'] ) ) {
-			return $submitted;
-		}
-
-		$stored_rules       = isset( $stored['rules'] ) && is_array( $stored['rules'] ) ? $stored['rules'] : array();
-		$pro_rules          = array_slice( $stored_rules, self::FREE_REMINDER_RULES );
-		$submitted['rules'] = array_merge( array_slice( $submitted['rules'], 0, self::FREE_REMINDER_RULES ), $pro_rules );
-
+	public static function preserve_locked_email_rules( $submitted, $stored ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 		return $submitted;
 	}
 
 	/**
-	 * Return review reward settings as allowed by the current license.
-	 * Review rewards are a Pro feature; stored values survive license expiry.
+	 * Return all review reward settings unchanged.
 	 *
-	 * @param array $settings Stored reward settings.
+	 * @param array $settings Review reward settings.
 	 * @return array
 	 */
 	public static function apply_reward_settings( $settings ) {
-		if ( ! self::has_pro_license() ) {
-			$settings['enable_review_rewards'] = false;
-		}
-
 		return $settings;
 	}
 
 	/**
-	 * Prevent a Free-plan AJAX request from overwriting stored reward settings.
+	 * Preserve every submitted review reward setting.
 	 *
-	 * @param array $submitted Submitted settings.
-	 * @param array $stored Existing stored settings.
+	 * @param array $submitted Submitted reward settings.
+	 * @param array $stored Stored reward settings.
 	 * @return array
 	 */
-	public static function preserve_locked_reward_settings( $submitted, $stored ) {
-		return self::has_pro_license() ? $submitted : $stored;
+	public static function preserve_locked_reward_settings( $submitted, $stored ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+		return $submitted;
 	}
 
 	/**
-	 * Data exposed to the admin UI for licensing actions.
+	 * Admin UI state with no external licensing or upgrade actions.
 	 *
 	 * @return array
 	 */
 	public static function get_admin_license_data() {
-		if ( defined( 'SKTPR_MARKETPLACE_BUILD' ) && SKTPR_MARKETPLACE_BUILD ) {
-			return array(
-				'is_pro'         => true,
-				'is_trial'       => false,
-				'is_marketplace' => true,
-				'upgrade_url'    => '',
-				'account_url'    => '',
-			);
-		}
-
-		$freemius    = function_exists( 'pr_fs' ) ? pr_fs() : null;
-		$is_pro      = $freemius ? self::has_pro_license() : false;
-		$license_url = '';
-
-		if ( $freemius && $freemius->is_premium() ) {
-			$license_url = $freemius->is_registered() ?
-				$freemius->get_account_url( false, array( 'activate_license' => 'true' ) ) :
-				$freemius->get_activation_url( array( 'require_license' => 'true' ) );
-
-			if ( $is_pro ) {
-				$license_url = $freemius->get_account_url();
-			}
-		}
-
 		return array(
-			'is_pro'         => $is_pro,
-			'is_trial'       => $freemius ? $freemius->is_trial() : false,
-			'is_marketplace' => false,
-			'upgrade_url'    => $freemius ? $freemius->get_upgrade_url() : '',
-			'account_url'    => $license_url,
+			'is_pro'         => true,
+			'is_trial'       => false,
+			'is_marketplace' => true,
+			'upgrade_url'    => '',
+			'account_url'    => '',
 		);
 	}
 }
